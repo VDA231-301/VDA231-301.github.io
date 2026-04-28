@@ -1,0 +1,22 @@
+{
+  "_id": "550e8400-e29b-41d4-a716-446655440000",
+  "_type": "TestingProject",
+  "_schemaVersion": "2.0.0",
+  "Title": "Example Material Sampling — Steel Sheet XY-2024",
+  "Client": {
+    "Name": "Example OEM GmbH",
+    "Country": "DE"
+  },
+  "ClientOrderNumber": "ORD-2024-001234",
+  "ContractorID": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+  "TestingCenters": [
+    {
+      "_id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+      "Name": "Certified Testing Laboratory Berlin",
+      "Country": "DE"
+    }
+  ],
+  "LaboratoryOrderNumber": "LAB-2024-5678",
+  "OrderDate": "2024-03-15",
+  "ReportDate": "2024-04-10"
+}

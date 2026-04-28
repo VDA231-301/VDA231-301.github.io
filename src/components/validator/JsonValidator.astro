@@ -1,0 +1,404 @@
+---
+interface Props {
+  lang: 'en' | 'de';
+  base: string;
+}
+
+const { lang, base } = Astro.props;
+
+const strings = {
+  en: {
+    schemaLabel: 'Schema',
+    tabPaste: 'Paste JSON',
+    tabUpload: 'Upload file',
+    examplesLabel: 'Load an example',
+    examplesPlaceholder: 'Select an example…',
+    validateButton: 'Validate',
+    resultValid: 'Valid — the document conforms to the selected schema.',
+    resultInvalid: 'Validation failed — {count} error(s) found.',
+    uploadPrompt: 'Choose a JSON file',
+    uploadHint: 'Only .json files are accepted.',
+    editorPlaceholder: 'Paste your JSON here…',
+    loadingSchemas: 'Loading schemas…',
+    errorLoadSchema: 'Failed to load schema.',
+    errorInvalidJson: 'Invalid JSON — check your syntax before validating.',
+    noSchema: 'No schema selected.',
+    field: 'Field',
+    message: 'Message',
+  },
+  de: {
+    schemaLabel: 'Schema',
+    tabPaste: 'JSON einfügen',
+    tabUpload: 'Datei hochladen',
+    examplesLabel: 'Beispiel laden',
+    examplesPlaceholder: 'Beispiel auswählen…',
+    validateButton: 'Validieren',
+    resultValid: 'Gültig — das Dokument entspricht dem gewählten Schema.',
+    resultInvalid: 'Validierung fehlgeschlagen — {count} Fehler gefunden.',
+    uploadPrompt: 'JSON-Datei auswählen',
+    uploadHint: 'Es werden nur .json-Dateien akzeptiert.',
+    editorPlaceholder: 'JSON hier einfügen…',
+    loadingSchemas: 'Schemata werden geladen…',
+    errorLoadSchema: 'Schema konnte nicht geladen werden.',
+    errorInvalidJson: 'Ungültiges JSON — bitte Syntax prüfen.',
+    noSchema: 'Kein Schema ausgewählt.',
+    field: 'Feld',
+    message: 'Meldung',
+  },
+};
+
+const t = JSON.stringify(strings[lang]);
+---
+
+<div id="validator-root" class="validator-widget" data-base={base} data-strings={t}>
+  <!-- Schema selector -->
+  <div class="mb-6">
+    <label for="schema-select" class="block text-sm font-medium text-gray-700 mb-2" id="schema-label">
+      Schema
+    </label>
+    <select
+      id="schema-select"
+      class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+      aria-labelledby="schema-label"
+    >
+      <option value="">Loading…</option>
+    </select>
+  </div>
+
+  <!-- Examples -->
+  <div class="mb-6">
+    <label for="example-select" class="block text-sm font-medium text-gray-700 mb-2" id="example-label">
+      Load an example
+    </label>
+    <select
+      id="example-select"
+      class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+    >
+      <option value="">Select an example…</option>
+    </select>
+  </div>
+
+  <!-- Input tabs -->
+  <div class="mb-4">
+    <div class="flex border-b border-gray-200 mb-4" role="tablist">
+      <button
+        id="tab-paste"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-paste"
+        class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-blue-600 text-blue-600 -mb-px"
+      >
+        Paste JSON
+      </button>
+      <button
+        id="tab-upload"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-upload"
+        class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 -mb-px"
+      >
+        Upload file
+      </button>
+    </div>
+
+    <!-- Paste panel -->
+    <div id="panel-paste" role="tabpanel" aria-labelledby="tab-paste">
+      <div id="editor-container" class="border border-gray-300 rounded overflow-hidden" style="min-height: 280px; font-size: 13px;"></div>
+    </div>
+
+    <!-- Upload panel -->
+    <div id="panel-upload" role="tabpanel" aria-labelledby="tab-upload" hidden>
+      <label
+        class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded cursor-pointer hover:border-blue-400 transition-colors bg-gray-50"
+        for="file-input"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gray-400 mb-2" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <span id="upload-label" class="text-sm text-gray-500">Choose a JSON file</span>
+        <span id="upload-hint" class="text-xs text-gray-400 mt-1">Only .json files are accepted.</span>
+        <input id="file-input" type="file" accept=".json,application/json" class="sr-only" />
+      </label>
+      <p id="file-name" class="text-xs text-gray-500 mt-2 hidden"></p>
+    </div>
+  </div>
+
+  <!-- Validate button -->
+  <div class="mb-6">
+    <button
+      id="validate-btn"
+      class="px-6 py-2.5 bg-[#1a2e4a] hover:bg-[#243d61] text-white text-sm font-medium rounded transition-colors"
+    >
+      Validate
+    </button>
+  </div>
+
+  <!-- Results panel -->
+  <div id="results" class="hidden" aria-live="polite" aria-atomic="true"></div>
+</div>
+
+<script>
+  import { EditorView, basicSetup } from 'codemirror';
+  import { json } from '@codemirror/lang-json';
+  import { EditorState } from '@codemirror/state';
+  import Ajv2020 from 'ajv/dist/2020';
+
+  const root = document.getElementById('validator-root')!;
+  const base = root.dataset.base ?? '/';
+  const t = JSON.parse(root.dataset.strings ?? '{}');
+
+  // ---- UI references ----
+  const schemaSelect = document.getElementById('schema-select') as HTMLSelectElement;
+  const exampleSelect = document.getElementById('example-select') as HTMLSelectElement;
+  const tabPaste = document.getElementById('tab-paste') as HTMLButtonElement;
+  const tabUpload = document.getElementById('tab-upload') as HTMLButtonElement;
+  const panelPaste = document.getElementById('panel-paste') as HTMLDivElement;
+  const panelUpload = document.getElementById('panel-upload') as HTMLDivElement;
+  const validateBtn = document.getElementById('validate-btn') as HTMLButtonElement;
+  const resultsEl = document.getElementById('results') as HTMLDivElement;
+  const fileInput = document.getElementById('file-input') as HTMLInputElement;
+  const fileNameEl = document.getElementById('file-name') as HTMLParagraphElement;
+  const uploadLabel = document.getElementById('upload-label') as HTMLSpanElement;
+  const uploadHint = document.getElementById('upload-hint') as HTMLSpanElement;
+  const editorContainer = document.getElementById('editor-container') as HTMLDivElement;
+
+  // Apply translated strings
+  tabPaste.textContent = t.tabPaste;
+  tabUpload.textContent = t.tabUpload;
+  validateBtn.textContent = t.validateButton;
+  uploadLabel.textContent = t.uploadPrompt;
+  uploadHint.textContent = t.uploadHint;
+  document.querySelector('label[for="schema-select"] span') // not needed directly
+  document.getElementById('schema-label')!.textContent = t.schemaLabel;
+  document.getElementById('example-label')!.textContent = t.examplesLabel;
+
+  // ---- CodeMirror editor ----
+  let editorView: EditorView;
+
+  function initEditor(initialContent = '') {
+    if (editorView) editorView.destroy();
+    editorView = new EditorView({
+      state: EditorState.create({
+        doc: initialContent,
+        extensions: [
+          basicSetup,
+          json(),
+          EditorView.theme({
+            '&': { backgroundColor: '#ffffff', height: '280px' },
+            '.cm-scroller': { overflow: 'auto', fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' },
+            '.cm-content': { padding: '12px' },
+          }),
+          EditorView.lineWrapping,
+        ],
+      }),
+      parent: editorContainer,
+    });
+  }
+
+  initEditor(t.editorPlaceholder);
+
+  // ---- Tab switching ----
+  function activateTab(active: HTMLButtonElement, inactive: HTMLButtonElement, show: HTMLElement, hide: HTMLElement) {
+    active.setAttribute('aria-selected', 'true');
+    active.classList.add('border-blue-600', 'text-blue-600');
+    active.classList.remove('border-transparent', 'text-gray-500');
+    inactive.setAttribute('aria-selected', 'false');
+    inactive.classList.remove('border-blue-600', 'text-blue-600');
+    inactive.classList.add('border-transparent', 'text-gray-500');
+    show.removeAttribute('hidden');
+    hide.setAttribute('hidden', '');
+  }
+
+  tabPaste.addEventListener('click', () => activateTab(tabPaste, tabUpload, panelPaste, panelUpload));
+  tabUpload.addEventListener('click', () => activateTab(tabUpload, tabPaste, panelUpload, panelPaste));
+
+  // ---- File upload ----
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files?.[0];
+    if (!file) return;
+    fileNameEl.textContent = file.name;
+    fileNameEl.classList.remove('hidden');
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const text = e.target?.result as string;
+      // Switch to paste tab and load into editor
+      activateTab(tabPaste, tabUpload, panelPaste, panelUpload);
+      initEditor(text);
+    };
+    reader.readAsText(file);
+  });
+
+  // ---- Schema manifest ----
+  type SchemaEntry = { id: string; label: string; path: string };
+  let schemas: SchemaEntry[] = [];
+
+  async function loadSchemaManifest() {
+    try {
+      const res = await fetch(`${base}schemas/manifest.json`);
+      schemas = await res.json();
+      schemaSelect.innerHTML = '';
+      schemas.forEach((s, i) => {
+        const opt = document.createElement('option');
+        opt.value = String(i);
+        opt.textContent = s.label;
+        schemaSelect.appendChild(opt);
+      });
+    } catch {
+      schemaSelect.innerHTML = `<option value="">${t.errorLoadSchema}</option>`;
+    }
+  }
+
+  // ---- Examples manifest ----
+  type ExampleEntry = { id: string; label: string; path: string };
+
+  async function loadExamplesManifest() {
+    try {
+      const res = await fetch(`${base}examples/manifest.json`);
+      const examples: ExampleEntry[] = await res.json();
+      const placeholder = document.createElement('option');
+      placeholder.value = '';
+      placeholder.textContent = t.examplesPlaceholder;
+      exampleSelect.innerHTML = '';
+      exampleSelect.appendChild(placeholder);
+      examples.forEach((ex) => {
+        const opt = document.createElement('option');
+        opt.value = ex.path;
+        opt.textContent = ex.label;
+        exampleSelect.appendChild(opt);
+      });
+    } catch {
+      // silently ignore — examples are optional
+    }
+  }
+
+  exampleSelect.addEventListener('change', async () => {
+    const path = exampleSelect.value;
+    if (!path) return;
+    try {
+      const res = await fetch(`${base}${path}`);
+      const text = await res.text();
+      activateTab(tabPaste, tabUpload, panelPaste, panelUpload);
+      initEditor(JSON.stringify(JSON.parse(text), null, 2));
+      exampleSelect.value = '';
+    } catch {
+      // silently ignore
+    }
+  });
+
+  // ---- Validation ----
+  const ajv = new Ajv2020({ allErrors: true, strict: false });
+  const schemaCache: Record<string, object> = {};
+
+  async function getSchema(entry: SchemaEntry): Promise<object | null> {
+    if (schemaCache[entry.id]) return schemaCache[entry.id];
+    try {
+      const res = await fetch(`${base}${entry.path}`);
+      const schema = await res.json();
+      schemaCache[entry.id] = schema;
+      return schema;
+    } catch {
+      return null;
+    }
+  }
+
+  function showResult(html: string) {
+    resultsEl.innerHTML = html;
+    resultsEl.classList.remove('hidden');
+  }
+
+  validateBtn.addEventListener('click', async () => {
+    const selectedIndex = schemaSelect.value;
+    if (selectedIndex === '' || !schemas[Number(selectedIndex)]) {
+      showResult(`<div class="p-4 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800">${t.noSchema}</div>`);
+      return;
+    }
+
+    const entry = schemas[Number(selectedIndex)];
+    const schema = await getSchema(entry);
+    if (!schema) {
+      showResult(`<div class="p-4 bg-red-50 border border-red-200 rounded text-sm text-red-800">${t.errorLoadSchema}</div>`);
+      return;
+    }
+
+    const jsonText = editorView.state.doc.toString();
+    let data: unknown;
+    try {
+      data = JSON.parse(jsonText);
+    } catch {
+      showResult(`<div class="p-4 bg-red-50 border border-red-200 rounded text-sm text-red-800">${t.errorInvalidJson}</div>`);
+      return;
+    }
+
+    let validate: ReturnType<typeof ajv.compile>;
+    try {
+      validate = ajv.compile(schema);
+    } catch {
+      // Re-add schema if needed (ajv caches by $id)
+      try {
+        ajv.addSchema(schema);
+        validate = ajv.compile(schema);
+      } catch (e: unknown) {
+        showResult(`<div class="p-4 bg-red-50 border border-red-200 rounded text-sm text-red-800">${t.errorLoadSchema}: ${String(e)}</div>`);
+        return;
+      }
+    }
+
+    const valid = validate(data);
+
+    if (valid) {
+      showResult(`
+        <div class="p-4 bg-green-50 border border-green-200 rounded flex items-start gap-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" class="flex-shrink-0 mt-0.5" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span class="text-sm text-green-800">${t.resultValid}</span>
+        </div>
+      `);
+    } else {
+      const errors = validate.errors ?? [];
+      const count = errors.length;
+      const errorRows = errors.map(err => {
+        const field = err.instancePath || '/';
+        const message = err.message ?? '';
+        return `<tr class="border-b border-gray-100 last:border-0">
+          <td class="py-2 pr-4 text-xs font-mono text-gray-600 whitespace-nowrap">${escHtml(field)}</td>
+          <td class="py-2 text-sm text-gray-700">${escHtml(message)}</td>
+        </tr>`;
+      }).join('');
+
+      showResult(`
+        <div class="p-4 bg-red-50 border border-red-200 rounded mb-4 flex items-start gap-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.5" class="flex-shrink-0 mt-0.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+          <span class="text-sm text-red-800">${t.resultInvalid.replace('{count}', String(count))}</span>
+        </div>
+        <div class="overflow-x-auto border border-gray-200 rounded">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="py-2 px-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">${t.field}</th>
+                <th class="py-2 px-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">${t.message}</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              ${errorRows}
+            </tbody>
+          </table>
+        </div>
+      `);
+    }
+  });
+
+  function escHtml(str: string): string {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // ---- Init ----
+  loadSchemaManifest();
+  loadExamplesManifest();
+</script>

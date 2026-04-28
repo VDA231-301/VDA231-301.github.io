@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vda231-301.github.io/VDA231-301/sitemap-index.xml

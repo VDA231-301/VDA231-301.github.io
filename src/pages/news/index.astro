@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getUi } from '@/i18n/index';
+
+const t = getUi('en');
+const base = import.meta.env.BASE_URL;
+
+const allArticles = await getCollection('news-en', ({ data }) => !data.draft);
+const articles = allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<BaseLayout title={t.news.pageTitle} description={t.news.pageDescription}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="mb-10 pb-6 border-b border-gray-200">
+      <h1 class="text-3xl font-bold text-[#1a2e4a] mb-2">{t.news.pageTitle}</h1>
+      <p class="text-gray-500">{t.news.pageDescription}</p>
+    </header>
+
+    {articles.length === 0 ? (
+      <p class="text-gray-500 text-sm">{t.news.empty}</p>
+    ) : (
+      <ul class="divide-y divide-gray-100">
+        {articles.map(article => (
+          <li class="py-8 first:pt-0">
+            <time class="text-xs text-gray-400 font-medium uppercase tracking-wide" datetime={article.data.date.toISOString()}>
+              {formatDate(article.data.date)}
+            </time>
+            <h2 class="text-lg font-semibold text-[#1a2e4a] mt-1 mb-2">
+              <a href={`${base}news/${article.slug}/`} class="hover:text-blue-600 transition-colors no-underline">
+                {article.data.title}
+              </a>
+            </h2>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">{article.data.summary}</p>
+            <a href={`${base}news/${article.slug}/`} class="text-sm text-blue-600 font-medium hover:underline">
+              {t.news.readMore} →
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BaseLayout>

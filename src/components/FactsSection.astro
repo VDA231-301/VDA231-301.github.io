@@ -1,0 +1,81 @@
+---
+interface Props {
+  title: string;
+  base: string;
+  facts: { label: string; icon: 'json' | 'modular' | 'opensource' | 'official' }[];
+}
+const { title, base, facts } = Astro.props;
+---
+
+<section
+  class="border-y border-[#d0e5d8]"
+  style={`background: #f5faf7; background-image: url('${base}bg-section.svg'); background-size: 32px 32px;`}
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4b5f53] mb-8">
+      {title}
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {facts.map(({ label, icon }) => (
+        <div class="flex flex-col gap-2.5">
+          <div aria-hidden="true">
+            {icon === 'json' && (
+              <!-- JSON Schema braces — monospace style -->
+              <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text
+                  x="0" y="17"
+                  font-family="'Courier New', Courier, monospace"
+                  font-size="20"
+                  font-weight="700"
+                  fill="#1B6B3A"
+                  letter-spacing="-1"
+                >&#123;&#125;</text>
+              </svg>
+            )}
+            {icon === 'modular' && (
+              <!-- Modular: three squares connected by lines forming a tree -->
+              <svg width="28" height="24" viewBox="0 0 28 24" fill="none" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <!-- root square -->
+                <rect x="9" y="0" width="10" height="8" rx="1.5"/>
+                <!-- connector line down from root -->
+                <line x1="14" y1="8" x2="14" y2="13"/>
+                <!-- horizontal bar -->
+                <line x1="5" y1="13" x2="23" y2="13"/>
+                <!-- left branch down -->
+                <line x1="5" y1="13" x2="5" y2="16"/>
+                <!-- right branch down -->
+                <line x1="23" y1="13" x2="23" y2="16"/>
+                <!-- left child square -->
+                <rect x="0" y="16" width="10" height="8" rx="1.5"/>
+                <!-- right child square -->
+                <rect x="18" y="16" width="10" height="8" rx="1.5"/>
+              </svg>
+            )}
+            {icon === 'opensource' && (
+              <!-- Open source: open padlock -->
+              <svg width="22" height="26" viewBox="0 0 22 26" fill="none" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <!-- shackle — open on right -->
+                <path d="M6 11 V7 a5 5 0 0 1 10 0 v0"/>
+                <!-- lock body -->
+                <rect x="1" y="11" width="20" height="14" rx="2.5"/>
+                <!-- keyhole -->
+                <circle cx="11" cy="17" r="2.5" fill="#1B6B3A" stroke="none"/>
+                <line x1="11" y1="19.5" x2="11" y2="22" stroke="#1B6B3A"/>
+              </svg>
+            )}
+            {icon === 'official' && (
+              <!-- Official: shield with checkmark -->
+              <svg width="24" height="27" viewBox="0 0 24 27" fill="none" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <!-- shield outline -->
+                <path d="M12 1 L22 5.5 V13 C22 18.5 17.5 23.2 12 25.5 C6.5 23.2 2 18.5 2 13 V5.5 Z"/>
+                <!-- checkmark inside -->
+                <polyline points="7,13 10.5,16.5 17,10" stroke-width="1.75"/>
+              </svg>
+            )}
+          </div>
+          <span class="text-sm text-[#2a3a30] leading-snug">{label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

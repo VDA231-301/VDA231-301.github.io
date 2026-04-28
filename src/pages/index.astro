@@ -1,0 +1,281 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FactsSection from '@/components/FactsSection.astro';
+import { getCollection } from 'astro:content';
+import { getUi } from '@/i18n/index';
+
+const t = getUi('en');
+const base = import.meta.env.BASE_URL;
+
+const allArticles = await getCollection('news-en', ({ data }) => !data.draft);
+const latestArticle = allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())[0];
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<BaseLayout
+  title="VDA 231-301 – JSON Schema for Automotive Test Data Exchange"
+  description="VDA 231-301 defines a standardized JSON schema for exchanging test and measurement data in the automotive industry."
+  keywords="VDA 231-301, VDA, automotive, test data, JSON schema"
+  canonical="https://vda231-301.github.io/"
+>
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "VDA 231-301",
+    "description": "Standardized JSON schema for automotive test data exchange per VDA 231-301",
+    "url": "https://vda231-301.github.io/",
+    "codeRepository": "https://github.com/VDA231-301/VDA231-301"
+  })} />
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section
+    class="relative overflow-hidden"
+    style={`background-image: url('${base}bg-hero.svg'); background-size: cover; background-position: center;`}
+  >
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+      <div class="max-w-xl">
+        <p class="text-[#6aad85] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+          Official VDA Recommendation
+        </p>
+        <h1
+          class="font-display text-white leading-none mb-6 text-balance"
+          style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(2.75rem, 7vw, 5rem);"
+        >
+          {t.home.heroSubtitle}
+        </h1>
+        <p class="text-[#b8d9c4] text-lg leading-relaxed mb-10 max-w-md">
+          {t.home.heroDescription}
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href={`${base}validator/`}
+            class="inline-block bg-[#1B6B3A] hover:bg-[#2a8a4e] text-white font-semibold px-6 py-3 rounded transition-colors no-underline text-sm tracking-wide border border-[#2a8a4e]"
+          >
+            {t.home.ctaValidator}
+          </a>
+          <a
+            href={`${base}docs/`}
+            class="inline-block bg-transparent hover:bg-white/10 text-white font-medium px-6 py-3 rounded transition-colors no-underline text-sm tracking-wide border border-white/25"
+          >
+            {t.home.ctaDocs}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-16 pointer-events-none" style="background: linear-gradient(to bottom, transparent, #ffffff);"></div>
+  </section>
+
+  <!-- ── What is VDA 231-301 ───────────────────────────────── -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2
+          class="mb-5 text-balance"
+          style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; color: #0d3d20; line-height: 1.15;"
+        >
+          {t.home.whatTitle}
+        </h2>
+        <p class="text-[#2a3a30] leading-relaxed text-base">
+          {t.home.whatBody}
+        </p>
+        <div class="mt-6 flex flex-wrap gap-5">
+          <a
+            href="https://github.com/VDA231-301"
+            target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-[#1B6B3A] font-medium hover:underline"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub Repository
+          </a>
+          <a
+            href="https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains"
+            target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-[#1B6B3A] font-medium hover:underline"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            VDA Website
+          </a>
+          <a
+            href="https://webshop.vda.de/VDA/en/vda-231-301-022025"
+            target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-[#1B6B3A] font-medium hover:underline"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            Official Document (VDA Webshop)
+          </a>
+        </div>
+      </div>
+
+      <!-- Schema node diagram -->
+      <div class="hidden md:block relative">
+        <div
+          class="rounded-lg overflow-hidden border border-[#d0e5d8]"
+          style="background: #f5faf7;"
+        >
+          <img
+            src={`${base}vda231-301-modular-concept.svg`}
+            alt="VDA 231-301 schema data model diagram"
+            class="w-full h-auto opacity-90"
+            width="600"
+            height="340"
+          />
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FactsSection
+    title={t.home.factsTitle}
+    base={base}
+    facts={[
+      { label: t.home.factsSchema,     icon: 'json'       },
+      { label: t.home.factsSubschemas, icon: 'modular'    },
+      { label: t.home.factsOpenSource, icon: 'opensource' },
+      { label: t.home.factsVDA,        icon: 'official'   },
+    ]}
+  />
+
+  <!-- ── Repository Overview ──────────────────────────────── -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2
+      class="mb-3 text-balance"
+      style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; color: #0d3d20; line-height: 1.15;"
+    >
+      Repository Overview
+    </h2>
+    <p class="text-[#2a3a30] leading-relaxed text-base mb-8 max-w-2xl">
+      VDA 231‑301 is organized into <strong>modular subschema repositories</strong>.
+      Each subschema covers a dedicated functional or regulatory domain.
+    </p>
+
+    <div class="overflow-x-auto rounded-lg border border-[#d0e5d8]">
+      <table class="w-full text-sm text-left border-collapse">
+        <thead>
+          <tr style="background: #e8f4ec;">
+            <th class="px-4 py-3 font-semibold text-[#0d3d20] border-b border-[#d0e5d8] whitespace-nowrap">Subschema Repository</th>
+            <th class="px-4 py-3 font-semibold text-[#0d3d20] border-b border-[#d0e5d8]">Focus (EN)</th>
+            <th class="px-4 py-3 font-semibold text-[#0d3d20] border-b border-[#d0e5d8]">Fokus (DE)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            {
+              name: 'VDA 231‑300 – Generic',
+              url: 'https://github.com/VDA231-301/VDA231-300',
+              en: 'Material and surface definition in 3D-models in JT',
+              de: 'Material- und Oberflächendefinition in 3D-Modellen im JT',
+            },
+            {
+              name: 'VDA 231‑301 – Generic',
+              url: 'https://github.com/VDA231-301/VDA231-301',
+              en: 'Generic core definitions and reusable model elements',
+              de: 'Generische Basismodelle und wiederverwendbare Strukturen',
+            },
+            {
+              name: 'Substance Declaration',
+              url: 'https://github.com/VDA231-301/VDA_231-301__SubstanceDeclaration',
+              en: 'Structured substance and material composition data',
+              de: 'Strukturierte Stoff‑ und Materialzusammensetzungen',
+            },
+            {
+              name: 'VDA 275 – Formaldehyde',
+              url: 'https://github.com/VDA231-301/VDA_231-301__VDA_275',
+              en: 'Formaldehyde emission test data',
+              de: 'Formaldehyd‑Emissionsprüfungen',
+            },
+            {
+              name: 'VDA 278 – VOC / Fogging',
+              url: 'https://github.com/VDA231-301/VDA_231-301__VDA_278',
+              en: 'VOC and fogging emission test data',
+              de: 'VOC‑ und Fogging‑Emissionsdaten',
+            },
+            {
+              name: 'VDA 270 – Odor',
+              url: 'https://github.com/VDA231-301/VDA_231-301__VDA_270',
+              en: 'Odor assessment based on panel testing',
+              de: 'Geruchsprüfungen mit Panelbewertung',
+            },
+            {
+              name: 'SEP 1240',
+              url: 'https://github.com/VDA231-301/VDA_231-301__SEP_1240',
+              en: 'Odor‑relevant material requirements',
+              de: 'Geruchsrelevante Werkstoffanforderungen',
+            },
+            {
+              name: 'EN 10204',
+              url: 'https://github.com/VDA231-301/VDA_231-301__EN_10204',
+              en: 'Digital inspection and acceptance certificates',
+              de: 'Digitale Prüf‑ und Abnahmezeugnisse',
+            },
+          ].map((repo, i) => (
+            <tr style={i % 2 === 0 ? 'background: #ffffff;' : 'background: #f5faf7;'}>
+              <td class="px-4 py-3 border-b border-[#e8f0eb] font-medium text-[#0d3d20] whitespace-nowrap align-top">
+                <a
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-[#1B6B3A] hover:underline font-semibold"
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  {repo.name}
+                </a>
+              </td>
+              <td class="px-4 py-3 border-b border-[#e8f0eb] text-[#2a3a30] align-top">{repo.en}</td>
+              <td class="px-4 py-3 border-b border-[#e8f0eb] text-[#2a3a30] align-top">{repo.de}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-5 text-sm text-[#2a3a30]">
+      Detailed data models, figures and examples are provided <strong>within each subschema repository</strong>.
+    </p>
+  </section>
+
+  <!-- ── Latest News ──────────────────────────────────────── -->
+  {latestArticle && (
+    <section style="background: #f5faf7; border-top: 1px solid #d0e5d8; border-bottom: 1px solid #d0e5d8;">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex items-center justify-between mb-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#1B6B3A]">Latest News</p>
+          <a href={`${base}news/`} class="text-sm text-[#1B6B3A] font-medium hover:underline">All news →</a>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+          <time class="text-xs text-[#5a7a65] font-medium uppercase tracking-wide whitespace-nowrap pt-0.5">
+            {formatDate(latestArticle.data.date)}
+          </time>
+          <div>
+            <h2 class="text-lg font-semibold text-[#0d3d20] mb-2 leading-snug">
+              <a href={`${base}news/${latestArticle.slug}/`} class="hover:underline">
+                {latestArticle.data.title}
+              </a>
+            </h2>
+            <p class="text-[#2a3a30] text-sm leading-relaxed mb-3">{latestArticle.data.summary}</p>
+            <a href={`${base}news/${latestArticle.slug}/`} class="text-sm text-[#1B6B3A] font-medium hover:underline">
+              Read more →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+</BaseLayout>

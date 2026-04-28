@@ -1,0 +1,54 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getUi } from '@/i18n/index';
+
+const t = getUi('en');
+const docs = (await getCollection('docs-en')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+---
+
+<BaseLayout title={t.docs.pageTitle} description={t.docs.pageDescription}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col lg:flex-row gap-12">
+
+      <!-- Sidebar -->
+      <aside class="lg:w-56 flex-shrink-0">
+        <nav aria-label="Documentation sections">
+          <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Documentation</p>
+          <ul class="space-y-1">
+            {docs.map(doc => (
+              <li>
+                <a
+                  href={`#${doc.slug}`}
+                  class="block text-sm text-gray-600 hover:text-blue-600 py-1 transition-colors no-underline"
+                >
+                  {doc.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Content -->
+      <article class="flex-1 min-w-0">
+        <header class="mb-10 pb-6 border-b border-gray-200">
+          <h1 class="text-3xl font-bold text-[#1a2e4a] mb-2">{t.docs.pageTitle}</h1>
+          <p class="text-gray-500">{t.docs.pageDescription}</p>
+        </header>
+
+        {await Promise.all(docs.map(async (doc) => {
+          const { Content } = await doc.render();
+          return (
+            <section id={doc.slug} class="mb-12 pb-12 border-b border-gray-100 last:border-0 last:mb-0">
+              <h2 class="text-xl font-semibold text-[#1a2e4a] mb-4">{doc.data.title}</h2>
+              <div class="prose">
+                <Content />
+              </div>
+            </section>
+          );
+        }))}
+      </article>
+    </div>
+  </div>
+</BaseLayout>

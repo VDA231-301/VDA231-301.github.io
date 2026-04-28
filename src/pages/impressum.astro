@@ -1,0 +1,64 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Impressum" description="Impressum und Kontaktinformationen für die VDA 231-301 Website.">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <div class="mb-8 text-sm text-[#5a7a65]">
+      🇬🇧 <a href={`${base}impress/`} class="text-[#1B6B3A] hover:underline">English version: Imprint</a>
+    </div>
+
+    <h1
+      class="mb-8 text-balance"
+      style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2.25rem; color: #0d3d20; line-height: 1.15;"
+    >
+      Impressum
+    </h1>
+
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-[#0d3d20] mb-3">Verantwortliche Stelle</h2>
+      <address class="not-italic text-[#2a3a30] leading-relaxed text-base">
+        VDA 231-301 Projektgruppe<br />
+        c/o Verband der Automobilindustrie e.V.<br />
+        Behrenstraße 35<br />
+        10117 Berlin<br />
+        Deutschland<br /><br />
+        E-Mail: <a href="mailto:info@vda.de" class="text-[#1B6B3A] hover:underline">info@vda.de</a>
+      </address>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-[#0d3d20] mb-3">Haftung für Inhalte</h2>
+      <p class="text-[#2a3a30] leading-relaxed text-base">
+        Die VDA 231-301 Projektgruppe betreibt diese Website zur Information über den VDA 231-301 Standard.
+        Die Inhalte wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
+        Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold text-[#0d3d20] mb-3">Haftung für Links</h2>
+      <p class="text-[#2a3a30] leading-relaxed text-base">
+        Diese Website enthält Links zu externen Websites Dritter. Auf deren Inhalte haben wir keinen Einfluss
+        und können daher keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten sind stets deren
+        Betreiber verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche
+        Rechtsverstöße überprüft; rechtswidrige Inhalte waren dabei nicht erkennbar. Eine permanente inhaltliche
+        Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht
+        zumutbar.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-lg font-semibold text-[#0d3d20] mb-3">Urheberrecht</h2>
+      <p class="text-[#2a3a30] leading-relaxed text-base">
+        Die Schemadefinitionen und der Quellcode dieses Projekts sind unter der
+        <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer" class="text-[#1B6B3A] hover:underline">MIT-Lizenz</a>
+        veröffentlicht. Andere Inhalte dieser Website (Texte, Bilder) sind, sofern nicht anders angegeben,
+        Eigentum der VDA 231-301 Projektgruppe.
+      </p>
+    </section>
+
+  </div>
+</BaseLayout>

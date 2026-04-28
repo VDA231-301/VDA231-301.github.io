@@ -1,0 +1,48 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import JsonValidator from '@/components/validator/JsonValidator.astro';
+import { getUi } from '@/i18n/index';
+
+const t = getUi('en');
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title={t.validator.pageTitle} description={t.validator.pageDescription}>
+  <div class="relative">
+    <!-- Validator content (visible but non-interactive beneath overlay) -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 select-none pointer-events-none" aria-hidden="true">
+      <header class="mb-8 pb-6 border-b border-gray-200">
+        <h1 class="text-3xl font-bold text-[#1a2e4a] mb-2">{t.validator.pageTitle}</h1>
+        <p class="text-gray-500">{t.validator.pageDescription}</p>
+      </header>
+
+      <JsonValidator lang="en" base={base} />
+
+      <div class="mt-10 pt-6 border-t border-gray-100">
+        <p class="text-xs text-gray-400">
+          Validation runs entirely in your browser. No data is transmitted to any server.
+          The Generic Schema uses JSON Schema draft 2020-12.
+        </p>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div
+      class="absolute inset-0 flex flex-col items-center justify-start pt-40 z-10"
+      style="background: rgba(240, 244, 241, 0.50); backdrop-filter: blur(3px);"
+    >
+      <div class="text-center px-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#1B6B3A] mb-3">Coming Soon</p>
+        <h2
+          class="mb-3"
+          style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; color: #0d3d20;"
+        >
+          Validator under construction
+        </h2>
+        <p class="text-[#2a3a30] text-base max-w-sm leading-relaxed">
+          We're still working on this. Check back soon.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
