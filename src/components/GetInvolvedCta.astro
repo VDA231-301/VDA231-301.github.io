@@ -1,0 +1,145 @@
+---
+interface Fact {
+  label: string;
+  icon: 'json' | 'modular' | 'opensource' | 'official';
+}
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel: string;
+  secondaryHref: string;
+  tertiaryLabel: string;
+  tertiaryHref: string;
+  facts: Fact[];
+  factsTitle: string;
+  variant?: 'white' | 'tint';
+  base?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  tertiaryLabel,
+  tertiaryHref,
+  facts,
+  factsTitle,
+  variant = 'tint',
+  base = '/',
+} = Astro.props;
+
+const accent = '#1B6B3A';
+const accentInk = '#5a6660';
+
+const sectionStyle = variant === 'tint'
+  ? `background: #f5faf7; background-image: url('${base}bg-section.svg'); background-size: 32px 32px; border-top: 1px solid #d0e5d8; border-bottom: 1px solid #d0e5d8;`
+  : 'border-top: 1px solid #d0e5d8; border-bottom: 1px solid #d0e5d8;';
+---
+
+<section style={sectionStyle}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="flex items-center gap-3 my-3 mb-9">
+          <span class="shrink-0 w-0.5 h-6 rounded-full" style={`background: ${accent};`} aria-hidden="true"></span>
+          <p style={`font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: ${accent};`}>
+            {eyebrow}
+          </p>
+        </div>
+    <!-- CTA row -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-10 ">
+      <div class="md:max-w-md">
+        
+        <p
+          class="text-balance"
+          style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0d3d20; line-height: 1.15;"
+        >
+          {title}
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <a
+          href={primaryHref}
+          target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-[#1B6B3A] hover:bg-[#2a8a4e] text-white font-semibold px-5 py-2.5 rounded transition-colors no-underline text-sm tracking-wide border border-[#2a8a4e]"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          {primaryLabel}
+        </a>
+
+        <a
+          href={secondaryHref}
+          target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-transparent hover:bg-[#1B6B3A] hover:text-white text-[#1B6B3A] font-semibold px-5 py-2.5 rounded transition-colors no-underline text-sm tracking-wide border border-[#1B6B3A]"
+        >
+          {secondaryLabel}
+        </a>
+
+        <a
+          href={tertiaryHref}
+          target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-sm text-[#1B6B3A] font-medium hover:underline"
+        >
+          {tertiaryLabel}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Facts row -->
+    <div class="pt-8">
+     
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {facts.map(({ label, icon }) => (
+          <div class="flex flex-col gap-2.5">
+            <div aria-hidden="true">
+              {icon === 'json' && (
+                <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="17" font-family="'Courier New', Courier, monospace" font-size="20" font-weight="700" fill={accent} letter-spacing="-1">&#123;&#125;</text>
+                </svg>
+              )}
+              {icon === 'modular' && (
+                <svg width="28" height="24" viewBox="0 0 28 24" fill="none" stroke={accent} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="9" y="0" width="10" height="8" rx="1.5"/>
+                  <line x1="14" y1="8" x2="14" y2="13"/>
+                  <line x1="5" y1="13" x2="23" y2="13"/>
+                  <line x1="5" y1="13" x2="5" y2="16"/>
+                  <line x1="23" y1="13" x2="23" y2="16"/>
+                  <rect x="0" y="16" width="10" height="8" rx="1.5"/>
+                  <rect x="18" y="16" width="10" height="8" rx="1.5"/>
+                </svg>
+              )}
+              {icon === 'opensource' && (
+                <svg width="22" height="26" viewBox="0 0 22 26" fill="none" stroke={accent} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 11 V7 a5 5 0 0 1 10 0 v0"/>
+                  <rect x="1" y="11" width="20" height="14" rx="2.5"/>
+                  <circle cx="11" cy="17" r="2.5" fill={accent} stroke="none"/>
+                  <line x1="11" y1="19.5" x2="11" y2="22" stroke={accent}/>
+                </svg>
+              )}
+              {icon === 'official' && (
+                <svg width="24" height="27" viewBox="0 0 24 27" fill="none" stroke={accent} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 1 L22 5.5 V13 C22 18.5 17.5 23.2 12 25.5 C6.5 23.2 2 18.5 2 13 V5.5 Z"/>
+                  <polyline points="7,13 10.5,16.5 17,10" stroke-width="1.75"/>
+                </svg>
+              )}
+            </div>
+            <span class="text-sm text-[#2a3a30] leading-snug">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

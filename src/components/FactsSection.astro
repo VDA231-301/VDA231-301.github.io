@@ -5,6 +5,8 @@ interface Props {
   facts: { label: string; icon: 'json' | 'modular' | 'opensource' | 'official' }[];
 }
 const { title, base, facts } = Astro.props;
+
+const accentInk = '#5a6660';
 ---
 
 <section
@@ -12,9 +14,12 @@ const { title, base, facts } = Astro.props;
   style={`background: #f5faf7; background-image: url('${base}bg-section.svg'); background-size: 32px 32px;`}
 >
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4b5f53] mb-8">
+     <div class="flex items-center gap-3 mb-6">
+    <span class="shrink-0 w-0.5 h-6 rounded-full" style={`background: ${accentInk};`} aria-hidden="true"></span>
+    <p style={`font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: ${accentInk};`}>
       {title}
     </p>
+  </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       {facts.map(({ label, icon }) => (
         <div class="flex flex-col gap-2.5">

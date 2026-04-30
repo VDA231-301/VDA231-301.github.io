@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import FactsSection from '@/components/FactsSection.astro';
+import GetInvolvedCta from '@/components/GetInvolvedCta.astro';
+import ChallengeSection from '@/components/ChallengeSection.astro';
+import SolutionSection from '@/components/SolutionSection.astro';
 import { getCollection } from 'astro:content';
 import { getUi } from '@/i18n/index';
 
@@ -35,7 +37,7 @@ function formatDate(date: Date) {
     class="relative overflow-hidden"
     style={`background-image: url('${base}bg-hero.svg'); background-size: cover; background-position: center;`}
   >
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
       <div class="max-w-xl">
         <p class="text-[#6aad85] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
           Official VDA Recommendation
@@ -69,6 +71,39 @@ function formatDate(date: Date) {
     <!-- bottom fade -->
     <div class="absolute bottom-0 left-0 right-0 h-16 pointer-events-none" style="background: linear-gradient(to bottom, transparent, #ffffff);"></div>
   </section>
+
+   <!-- ── Today's reality (challenge) ──────────────────────── -->
+  <ChallengeSection
+    eyebrow={t.home.challengeEyebrow}
+    title={t.home.challengeTitle}
+    footer={t.home.challengeFooter}
+    base={base}
+    cards={[
+      { num: '01', head: t.home.challengeManualHead, body: [t.home.challengeManualItem1, t.home.challengeManualItem2, t.home.challengeManualItem3], icon: 'manual' },
+      { num: '02', head: t.home.challengeCoordHead,  body: [t.home.challengeCoordItem1,  t.home.challengeCoordItem2,  t.home.challengeCoordItem3],  icon: 'coordination' },
+      { num: '03', head: t.home.challengeRiskHead,   body: [t.home.challengeRiskItem1,   t.home.challengeRiskItem2,   t.home.challengeRiskItem3],   icon: 'risk' },
+    ]}
+  />
+
+  <!-- ── The standardised answer (solution) ───────────────── -->
+  <SolutionSection
+    eyebrow={t.home.solutionEyebrow}
+    title={t.home.solutionTitle}
+    footerLead={t.home.solutionFooterLead}
+    footerTail={t.home.solutionFooterTail}
+    base={base}
+    cards={[
+      { num: '01', head: t.home.solutionMatHead,   body: [t.home.solutionMatItem1,   t.home.solutionMatItem2,   t.home.solutionMatItem3],   icon: 'material' },
+      {
+        num: '02',
+        head: t.home.solutionResHead,
+        body: [t.home.solutionResItem1, t.home.solutionResItem2, t.home.solutionResItem3],
+        icon: 'results',
+        chips: [t.home.solutionResChip1, t.home.solutionResChip2, t.home.solutionResChip3],
+      },
+      { num: '03', head: t.home.solutionShareHead, body: [t.home.solutionShareItem1, t.home.solutionShareItem2, t.home.solutionShareItem3], icon: 'shared' },
+    ]}
+  />
 
   <!-- ── What is VDA 231-301 ───────────────────────────────── -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
@@ -139,8 +174,18 @@ function formatDate(date: Date) {
     </div>
   </section>
 
-  <FactsSection
-    title={t.home.factsTitle}
+
+  <!-- ── Get Involved CTA + Facts ────────────────────────── -->
+  <GetInvolvedCta
+    eyebrow={t.home.ctaEyebrow}
+    title={t.home.ctaTitle}
+    primaryLabel={t.home.ctaPrimary}
+    primaryHref="https://github.com/VDA231-301"
+    secondaryLabel={t.home.ctaSecondary}
+    secondaryHref="https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains"
+    tertiaryLabel={t.home.ctaTertiary}
+    tertiaryHref="https://webshop.vda.de/VDA/en/vda-231-301-022025"
+    factsTitle={t.home.factsTitle}
     base={base}
     facts={[
       { label: t.home.factsSchema,     icon: 'json'       },
@@ -149,7 +194,7 @@ function formatDate(date: Date) {
       { label: t.home.factsVDA,        icon: 'official'   },
     ]}
   />
-
+  
   <!-- ── Repository Overview ──────────────────────────────── -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <h2
