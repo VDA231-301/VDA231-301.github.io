@@ -13,7 +13,7 @@ The SEP 1240 subschema has been formally adopted by the responsible VDA projec
 ### What is SEP 1240?
 SEP 1240 (issued by the **Steel Institute VDEh**) is the established guideline for the experimental determination of mechanical material properties of steel sheets and therefore forms a key basis for CAE simulations.
 
-🎯 The objective of the subschema is to harmonize the documentation and, in particular, the exchange of these data between testing institutes, material suppliers, and OEMs.
+The objective of the subschema is to harmonize the documentation and, in particular, the exchange of these data between testing institutes, material suppliers, and OEMs.
 
 ### What does this mean in practice?
 With the new subschema, for example, tensile test results can now be exchanged in a structured and digital format.
@@ -32,6 +32,4 @@ https://github.com/VDA231-301
 The VDA 231‑301 website has recently been migrated and is currently undergoing further editorial updates.  
 ➡️ An update will follow shortly in a separate news post.
 
-## A section heading
 
-More content…
