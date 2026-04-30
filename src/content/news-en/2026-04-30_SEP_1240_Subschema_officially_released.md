@@ -21,3 +21,5 @@ Results that were often previously provided in PDF files or spreadsheets can now
 ### Further information & access
 - https://github.com/VDA231-301/schemas
 - https://github.com/VDA231-301
+
+*Originally shared by [Heike Ulmer-Langner] https://www.linkedin.com/posts/heike-ulmer-langner-166774367_offizielle-ver%C3%B6ffentlichung-des-subschemas-share-7455581049973297153-I0tR?utm_source=share&utm_medium=member_ios&rcm=ACoAAFsPVt4BCSAU9kIW-0JKs-zchfuQ6ypbyI0 (Chemische Verfahrenstechnik, Mercedes-Benz AG) on LinkedIn.*
