@@ -82,9 +82,9 @@ export const ui = {
     solutionResChip1: 'OEMs',
     solutionResChip2: 'Suppliers',
     solutionResChip3: 'Laboratories',
-    solutionFooterLead: 'Defines what is tested.',
+    solutionFooterLead: 'Defines what is tested and how materials are described.',
     solutionFooterTail:
-      'Defines how results are described — enabling seamless data flow without re‑typing or interpretation gaps.',
+      'Defines how results are structured and exchanged – enabling seamless data flow without re-typing or interpretation gaps.',
 
     ctaEyebrow: 'Get involved',
     ctaTitle: 'Apply the standard.<br />Integrate it.<br />Shape its future.',
