@@ -83,10 +83,13 @@ export const ui = {
       'Defines how results are described — enabling seamless data flow without re‑typing or interpretation gaps.',
 
     ctaEyebrow: 'Get involved',
-    ctaTitle: 'Help shape the standard.',
-    ctaPrimary: 'Explore on GitHub',
+    ctaTitle: 'Apply the standard. Integrate it. Shape its future.',
+    ctaPrimary: 'Use and explore on GitHub',
     ctaSecondary: 'Contact the VDA project group',
-    ctaTertiary: 'Read the specification',
+    ctaTertiary: 'Read the official recommendation',
+    ctaBody: `Apply the standard in your projects to exchange material data in a structured and reliable way.
+    Integrate the schema into systems and digital platforms to enable interoperable, system‑to‑system data flows.
+    Shape the future of the standard by contributing expertise, feedback and use cases.`,
   },
   docs: {
     pageTitle: 'Documentation',
