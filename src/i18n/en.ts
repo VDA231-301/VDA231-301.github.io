@@ -83,9 +83,7 @@ export const ui = {
       'Defines how results are described — enabling seamless data flow without re‑typing or interpretation gaps.',
 
     ctaEyebrow: 'Get involved',
-    ctaTitleLine1: 'Apply the standard.',
-    ctaTitleLine2: 'Integrate it.',
-    ctaTitleLine3: 'Shape its future.',
+    ctaTitle: 'Apply the standard.<br />Integrate it.<br />Shape its future.',
     ctaPrimary: 'Use and explore on GitHub',
     ctaSecondary: 'Contact the VDA project group',
     ctaTertiary: 'Read the official recommendation',
