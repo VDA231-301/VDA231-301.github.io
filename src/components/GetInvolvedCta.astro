@@ -7,6 +7,7 @@ interface Fact {
 interface Props {
   eyebrow: string;
   title: string;
+  ctaBody?: string;
   primaryLabel: string;
   primaryHref: string;
   secondaryLabel: string;
@@ -22,6 +23,7 @@ interface Props {
 const {
   eyebrow,
   title,
+  ctaBody,
   primaryLabel,
   primaryHref,
   secondaryLabel,
@@ -58,9 +60,18 @@ const sectionStyle = variant === 'tint'
           class="text-balance"
           style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0d3d20; line-height: 1.15;"
         >
-          {title}
+          <span set:html={title} />
         </p>
+           
+       {ctaBody && (
+         <div class="mt-4 text-sm text-[#2a3a30] leading-relaxed">
+       {ctaBody.split('\n').map((line) => (
+        <p class="mt-1">{line}</p>
+                               ))}
+                         </div>
+                    )}
       </div>
+
 
       <div class="flex flex-wrap items-center gap-3">
         <a
