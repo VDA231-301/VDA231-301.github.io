@@ -29,8 +29,10 @@ export const ui = {
     whatTitle: 'What is VDA 231-301?',
     whatBody: `VDA 231‑301 is an official VDA recommendation defining a standardized, machine‑readable data model for material and test information.
     It addresses one of the key challenges in digital supply chains: reliable, interoperable exchange of material‑related data across company and system boundaries. 
+    
     Built on open JSON Schema, VDA 231‑301 enables validated, system‑to‑system data exchange between OEMs, suppliers and testing laboratories. 
     VDA 231‑301 builds on the standardized material definitions provided by VDA 231‑300 and extends them with a machine‑readable model for test and measurement results.
+    
     Together, they form a consistent foundation for structured material data exchange and establish a common semantic foundation that complements digital ecosystems such as Catena‑X, allowing material data to flow consistently without proprietary formats, manual re‑entry or interpretation gaps.
     While originating from automotive requirements, the data model is generically applicable to any industry relying on structured exchange of material information.
     The recommendation is developed and maintained by the VDA 231‑301 Project Group and evolves through transparent, open collaboration on GitHub.`,
