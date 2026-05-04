@@ -64,13 +64,13 @@ const sectionStyle = variant === 'tint'
           <span set:html={title} />
         </p>
            
-       {ctaBody && (
-         <div class="mt-6 pl-2 border-l border-[#d0e5d8] text-sm text-[#2a3a30] leading-relaxed">
-       {ctaBody.split('\n').map((line) => (
-        <p class="mt-2">{line}</p>
-                               ))}
-                         </div>
-                    )}
+       
+    {ctaBody && (
+      <p class="mt-6 max-w-2xl text-sm text-[#2a3a30] leading-relaxed whitespace-pre-line">
+        {ctaBody}
+      </p>
+      )}
+
       </div>
 
 
