@@ -106,11 +106,28 @@ function formatDate(date: Date) {
   />
 
  
-<div class="text-[#2a3a30] leading-relaxed text-base space-y-4">
-  {t.home.whatBody.split('\n\n').map((paragraph) => (
-    <p>{paragraph}</p>
-  ))}
-</div>
+
+<!-- ── What is VDA 231-301 ───────────────────────────── -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+    <!-- LEFT: Text -->
+    <div>
+      <h2
+        class="mb-5 text-balance"
+        style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; color: #0d3d20; line-height: 1.15;"
+      >
+        {t.home.whatTitle}
+      </h2>
+
+      <div class="text-[#2a3a30] leading-relaxed text-base space-y-4">
+        {t.home.whatBody.split('\n\n').map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-5">
+          <a
 
             href="https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains"
             target="_blank" rel="noopener noreferrer"
