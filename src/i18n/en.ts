@@ -95,11 +95,19 @@ export const ui = {
     It enables interoperable, machine-readable material data exchange across OEMs, suppliers and IT systems
     and provides a shared foundation for digital validation, compliance and sustainability reporting.
 
+    
     Apply the recommendation to establish a reliable, standardized basis for material and test data exchange.
     Integrate the open JSON schema into IT systems and digital platforms to enable seamless system-to-system data flows.
-    Contribute expertise, feedback and real-world use cases to actively shape the further evolution of the recommendation.
-    `,
-  },
+    Contribute expertise, feedback and real-world use cases to actively shape the further evolution of the recommendation.`,
+    ctaRoles: {
+    oem:
+    'Establish a scalable reference for digital material data exchange and improve data quality across suppliers.',
+    supplier:
+    'Provide material data once, reuse it across customers and reduce manual effort and coordination overhead.',
+    tool:
+    'Build interoperable solutions based on an open, VDA-backed JSON schema instead of proprietary interfaces.',
+    },
+
   docs: {
     pageTitle: 'Documentation',
     pageDescription: 'Overview of the VDA 231-301 standard, its structure, and how to work with it.',
