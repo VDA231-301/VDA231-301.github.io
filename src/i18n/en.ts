@@ -21,10 +21,10 @@ export const ui = {
   },
   home: {
     heroTitle: 'VDA 231-301',
-    heroSubtitle: 'Material Information',
+    heroSubtitle: 'Material Information -  From documents to trusted material data',
     heroDescription:
-      'A standardised, open JSON schema for exchanging material information data across the industrial supply chains.',
-    ctaValidator: 'Try the Validator',
+      'A standardized, machine-readable data model designed for digital ecosystems. An open JSON schema enabling interoperable exchange of material and test data across industrial supply chains',
+    ctaValidator: 'Validate your data',
     ctaDocs: 'Read the Documentation',
     whatTitle: 'What is VDA 231-301?',
     whatBody: `VDA 231-301 defines a common data format for transmitting material information e.g. test results
