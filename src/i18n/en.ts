@@ -91,9 +91,14 @@ export const ui = {
     ctaPrimary: 'Use and explore on GitHub',
     ctaSecondary: 'Contact the VDA project group',
     ctaTertiary: 'Read the official recommendation',
-    ctaBody: `Apply the standard in your projects to exchange material data in a structured and reliable way.
-    Integrate the schema into systems and digital platforms to enable interoperable, system‑to‑system data flows.
-    Shape the future of the standard by contributing expertise, feedback and use cases.`,
+    ctaBody: `VDA 231-301 is an open VDA recommendation developed by industry, for industry.
+    It enables interoperable, machine-readable material data exchange across OEMs, suppliers and IT systems
+    and provides a shared foundation for digital validation, compliance and sustainability reporting.
+
+    Apply the recommendation to establish a reliable, standardized basis for material and test data exchange.
+    Integrate the open JSON schema into IT systems and digital platforms to enable seamless system-to-system data flows.
+    Contribute expertise, feedback and real-world use cases to actively shape the further evolution of the recommendation.
+    `,
   },
   docs: {
     pageTitle: 'Documentation',
