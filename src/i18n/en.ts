@@ -107,7 +107,7 @@ export const ui = {
     tool:
     'Build interoperable solutions based on an open, VDA-backed JSON schema instead of proprietary interfaces.',
     },
-
+  },
   docs: {
     pageTitle: 'Documentation',
     pageDescription: 'Overview of the VDA 231-301 standard, its structure, and how to work with it.',
