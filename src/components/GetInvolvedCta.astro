@@ -57,13 +57,12 @@ const sectionStyle = variant === 'tint'
     <!-- CTA row -->
    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-10">
 
-  <div class="md:max-w-md flex-1">
-    <p
-      class="text-balance"
-      style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0d3d20; line-height: 1.15;"
-    >
-      <span set:html={title} />
-    </p>
+  <div class="flex-1">
+    <h2
+      class="mb-5 text-balance text-3xl md:text-4xl font-display text-vda-dark"
+      set:html={title}
+    >      
+    </h2>
 
     {ctaBody && (
       <p class="mt-6 max-w-2xl text-sm text-[#2a3a30] leading-relaxed whitespace-pre-line">
@@ -78,7 +77,7 @@ const sectionStyle = variant === 'tint'
     )}
   </div>
 
-  <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3 sm:justify-end pt-4 sm:pt-0">
+  <div class="flex flex-col sm:items-center gap-4 sm:gap-3 sm:justify-end pt-4 sm:pt-0">
     <a
       href={primaryHref}
       target="_blank" rel="noopener noreferrer"
