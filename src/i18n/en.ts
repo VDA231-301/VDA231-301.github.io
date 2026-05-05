@@ -91,7 +91,7 @@
     ctaPrimary: 'Use and explore on GitHub',
     ctaSecondary: 'Contact the VDA project group',
     ctaTertiary: 'Read the official recommendation',
-    ctaBody: VDA 231‑301 provides a standardized, machine‑readable data model for material and test information, enabling interoperable data exchange across organizations and IT systems.
+    ctaBody: `VDA 231‑301 provides a standardized, machine‑readable data model for material and test information, enabling interoperable data exchange across organizations and IT systems.
 
     Replace document‑based processes with validated, system‑to‑system data exchange.
     Integrate the open JSON Schema into your platforms and toolchains to reduce manual effort, improve data quality and ensure reliable compliance and sustainability reporting at scale.
