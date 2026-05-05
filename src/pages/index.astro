@@ -298,7 +298,7 @@ function formatDate(date: Date) {
               de: 'Digitale Prüf‑ und Abnahmezeugnisse',
             },
           ].map((repo, i) => (
-            <tr style={i % 2 === 0 ? 'background: #ffffff;' : 'background: #f5faf7;'}>
+            <tr style={{ background: i % 2 === 0 ? '#ffffff' : '#f5faf7' }}>
               <td class="px-4 py-3 border-b border-[#e8f0eb] font-medium text-[#0d3d20] whitespace-nowrap align-top">
                 <a
                   href={repo.url}
