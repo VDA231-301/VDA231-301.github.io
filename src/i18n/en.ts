@@ -39,10 +39,10 @@
     While originating from automotive requirements, the data model is generically applicable to any industry relying on structured exchange of material information.
     The recommendation is developed and maintained by the VDA 231‑301 Project Group and evolves through transparent, open collaboration on GitHub.`,
     factsTitle: 'At a glance',
-    factsSchema: 'JSON Schema draft 2020-12',
-    factsSubschemas: 'Modular subschema architecture',
-    factsOpenSource: 'Open source — MIT License',
-    factsVDA: 'Official VDA recommendation',
+    factsSchema: 'JSON Schema — system‑ready and validatable ',
+    factsSubschemas: 'Modular subschema architecture for scalable integration',
+    factsOpenSource: 'Open standard — MIT License, no vendor lock-in',
+    factsVDA: 'Official VDA recommendation with industry backing',
 
     challengeEyebrow: "Today's reality",
     challengeTitle:
