@@ -1,4 +1,4 @@
----
+  ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import GetInvolvedCta from '@/components/GetInvolvedCta.astro';
 import ChallengeSection from '@/components/ChallengeSection.astro';
@@ -49,10 +49,27 @@ function formatDate(date: Date) {
           {t.home.heroSubtitle}
         </h1>
 
+              
         <p class="text-white/90 text-sm leading-relaxed mb-4 max-w-md">
         Increasing regulatory requirements, sustainability reporting and digital validation demand a new level of consistency in material data exchange.
         </p>
 
+        <ul class="mb-6 space-y-2 text-white/90 text-sm max-w-md leading-relaxed">
+        <li class="flex items-start gap-2">
+        <span class="text-[#6aad85] mt-1">•</span>
+        <span>Reduce manual re-entry and coordination effort across partners</span>
+       </li>
+       <li class="flex items-start gap-2">
+       <span class="text-[#6aad85] mt-1">•</span>
+       <span>Increase data consistency for compliance, sustainability and audits</span>
+      </li>
+      <li class="flex items-start gap-2">
+      <span class="text-[#6aad85] mt-1">•</span>
+      <span>Enable validated system-to-system exchange with open JSON Schema</span>
+      </li>
+      </ul>
+
+       
         <p class="text-[#b8d9c4] text-lg leading-relaxed mb-10 max-w-md">
           {t.home.heroDescription}
         </p>
