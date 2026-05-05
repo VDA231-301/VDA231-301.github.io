@@ -98,13 +98,15 @@ export const ui = {
     Apply the recommendation to replace manual data handling with validated, system‑to‑system exchange.
     Integrate the open JSON Schema into digital platforms and IT systems to enable consistent, scalable data flows.
     Contribute expertise, feedback and use cases to actively shape the further evolution of the recommendation.`,
+    ctaQuickstart:
+    'Start in minutes: explore the schema, run the validator and try an example file — directly in your browser.',
     ctaRoles: {
     manufacturer:
-    'Establish a scalable reference for digital material data exchange and improve data quality across suppliers.',
+    'Adopt a standardized, machine-readable reference for material and test data and improve data quality, comparability and auditability across the supply chain.',
     supplier:
-    'Provide material data once, reuse it across customers and reduce manual effort and coordination overhead.',
+    'Provide material and test data once, reuse it across customers and reduce manual effort, coordination loops and reporting overhead.',
     tool:
-    'Build interoperable solutions based on an open, VDA-backed JSON schema instead of proprietary interfaces.',
+    'Build interoperable solutions on an open, VDA-backed JSON Schema and avoid proprietary interfaces or one-off integrations.',
     },
   },
   docs: {
