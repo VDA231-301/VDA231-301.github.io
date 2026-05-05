@@ -228,6 +228,10 @@ function formatDate(date: Date) {
         >
           {t.home.whatTitle}
         </h2>
+        
+        <p class="mt-4 text-lg leading-relaxed text-gray-700 max-w-3xl">
+        {t.home.whatLead}
+        </p>
 
         <div class="text-[#2a3a30] leading-relaxed text-base space-y-4">
           {t.home.whatBody.split("\n\n").map((paragraph) => <p>{paragraph}</p>)}
