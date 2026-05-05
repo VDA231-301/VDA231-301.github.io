@@ -31,7 +31,7 @@ export const ui = {
     It addresses one of the key challenges in digital supply chains: reliable, interoperable exchange of material‑related data across company and system boundaries. 
 
     
-    Built on open JSON Schema, VDA 231‑301 enables validated, system‑to‑system data exchange between OEMs, suppliers and testing laboratories. 
+    Built on open JSON Schema, VDA 231‑301 enables validated, system‑to‑system data exchange between manufacturers, suppliers and testing laboratories. 
     VDA 231‑301 builds on the standardized material definitions provided by VDA 231‑300 and extends them with a machine‑readable model for test and measurement results.
 
     
@@ -52,7 +52,7 @@ export const ui = {
     challengeManualItem2: 'Result consolidation and reporting',
     challengeManualItem3: 'Repeated data entry across system',
     challengeCoordHead: 'High coordination effort',
-    challengeCoordItem1: 'OEMs',
+    challengeCoordItem1: 'Manufacturers',
     challengeCoordItem2: 'Suppliers',
     challengeCoordItem3: 'Laboratories',
     challengeRiskHead: 'Quality and Compliance risks',
@@ -79,7 +79,7 @@ export const ui = {
     solutionShareItem1: 'Common interpretation of material and test data',
     solutionShareItem2: 'Reduced coordination effort across companies',
     solutionShareItem3: 'Reliable data exchange',
-    solutionResChip1: 'OEMs',
+    solutionResChip1: 'Manufacturers',
     solutionResChip2: 'Suppliers',
     solutionResChip3: 'Laboratories',
     solutionFooterLead: 'Defines what is tested and how materials are described.',
