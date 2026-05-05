@@ -1,4 +1,4 @@
-export const ui = {
+  export const ui = {
   nav: {
     home: 'Home',
     docs: 'Documentation',
@@ -87,19 +87,20 @@ export const ui = {
       'Defines how results are structured and exchanged – enabling seamless data flow without re-typing or interpretation gaps.',
 
     ctaEyebrow: 'Get involved',
-    ctaTitle: 'Apply the standard.<br />Integrate it.<br />Shape its future.',
+    ctaTitle: 'Apply the standard.<br />Connect your systems.<br />Shape interoperable material data.',
     ctaPrimary: 'Use and explore on GitHub',
     ctaSecondary: 'Contact the VDA project group',
     ctaTertiary: 'Read the official recommendation',
-    ctaBody: `VDA 231‑301 is an open VDA recommendation developed by industry, for industry.
-    It enables interoperable, machine‑readable material data exchange across manufacturers, suppliers and IT systems,
-    and establishes a shared foundation for digital validation, compliance and sustainability reporting.
+    ctaBody: VDA 231‑301 provides a standardized, machine‑readable data model for material and test information, enabling interoperable data exchange across organizations and IT systems.
 
-    Apply the recommendation to replace manual data handling with validated, system‑to‑system exchange.
-    Integrate the open JSON Schema into digital platforms and IT systems to enable consistent, scalable data flows.
-    Contribute expertise, feedback and use cases to actively shape the further evolution of the recommendation.`,
+    Replace document‑based processes with validated, system‑to‑system data exchange.
+    Integrate the open JSON Schema into your platforms and toolchains to reduce manual effort, improve data quality and ensure reliable compliance and sustainability reporting at scale.
+
+    VDA 231‑301 is developed as an open standard.
+    Adoption, technical feedback and real‑world use cases directly shape its evolution.
+    Join the community to contribute expertise, integrate the standard into your systems and drive long‑term interoperability across value chains.`,
     ctaQuickstart:
-    'Start in minutes: explore the schema, run the validator and try an example file — directly in your browser.',
+    'Quick start: explore the schema, validate example files and test interoperable material data — directly in your browser.',
     ctaRoles: {
     manufacturer:
     'Adopt a standardized, machine-readable reference for material and test data and improve data quality, comparability and auditability across the supply chain.',
