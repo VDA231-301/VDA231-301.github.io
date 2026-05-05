@@ -233,9 +233,16 @@ function formatDate(date: Date) {
         {t.home.whatLead}
         </p>
 
-        <div class="text-[#2a3a30] leading-relaxed text-base space-y-4">
-          {t.home.whatBody.split("\n\n").map((paragraph) => <p>{paragraph}</p>)}
-        </div>
+        
+      <div class="text-[#2a3a30] leading-relaxed text-base space-y-4">
+      {t.home.whatBody
+      .trim()
+      .split(/\n\s*\n/)
+      .map((paragraph) => (
+        <p key={i}>{paragraph.trim()}</p>
+        ))}
+      </div>
+
 
         <div class="mt-6 flex flex-wrap gap-5">
           <a
