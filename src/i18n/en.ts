@@ -27,17 +27,18 @@
     ctaValidator: 'Validate your data',
     ctaDocs: 'Explore the documentation',
     whatTitle: 'What is VDA 231-301?',
+    whatLead: 'VDA 231‑301 enables interoperable, machine‑readable exchange of material and test data across systems, companies and digital ecosystems.',
     whatBody: `VDA 231‑301 is an official VDA recommendation defining a standardized, machine‑readable data model for material and test information.
-    It addresses one of the key challenges in digital supply chains: reliable, interoperable exchange of material‑related data across company and system boundaries. 
+    It addresses a key challenge in digital supply chains: reliable, interoperable exchange of material‑related data across company and system boundaries.
 
-    
-    Built on open JSON Schema, VDA 231‑301 enables validated, system‑to‑system data exchange between manufacturers, suppliers and testing laboratories. 
-    VDA 231‑301 builds on the standardized material definitions provided by VDA 231‑300 and extends them with a machine‑readable model for test and measurement results.
+    Built on open JSON Schema, VDA 231‑301 enables validated system‑to‑system data exchange between manufacturers, suppliers and testing laboratories.
+    It builds on the standardized material definitions of VDA 231‑300 and extends them with a machine‑readable model for test and measurement results.
 
-    
-    Together, they form a consistent foundation for structured material data exchange and establish a common semantic foundation that complements digital ecosystems such as Catena‑X, allowing material data to flow consistently without proprietary formats, manual re‑entry or interpretation gaps.
+    Together, VDA 231‑300 and VDA 231‑301 form a consistent foundation for structured material data exchange.
+    They complement digital ecosystems such as Catena‑X by enabling consistent data flow without proprietary formats, manual re‑entry or interpretation gaps.
+
     While originating from automotive requirements, the data model is generically applicable to any industry relying on structured exchange of material information.
-    The recommendation is developed and maintained by the VDA 231‑301 Project Group and evolves through transparent, open collaboration on GitHub.`,
+    The recommendation is developed and maintained by the VDA 231‑301 Project Group through transparent, open collaboration.`,
     factsTitle: 'At a glance',
     factsSchema: 'JSON Schema — system‑ready and validatable ',
     factsSubschemas: 'Modular subschema architecture for scalable integration',
@@ -63,7 +64,7 @@
 
     solutionEyebrow: 'The standardised answer',
     solutionTitle: 'VDA 231-300 and VDA 231-301 - A standardized, machine‑readable foundation for interoperable material data.',
-    solutionMatHead: 'Consistend material definition',
+    solutionMatHead: 'Consistent material definition',
     solutionMatItem1: 'Standardized material and surface semantics (VDA 231-300)',
     solutionMatItem2: 'Clear reference to 3D product data - JT / ISO 14306',
     solutionMatItem3: 'Unambiguous basis for downstream test and compliance data',
