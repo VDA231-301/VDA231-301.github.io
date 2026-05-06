@@ -239,7 +239,8 @@ function formatDate(date: Date) {
       .trim()
       .split(/\n\s*\n/)
       .map((paragraph) => (
-        <p key={i}>{paragraph.trim()}</p>
+        <p>{paragraph.trim()}
+        </p>
         ))}
       </div>
 
