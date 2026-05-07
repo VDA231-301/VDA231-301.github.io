@@ -27,6 +27,7 @@ export const ui = {
     ctaValidator: 'Zum Validator',
     ctaDocs: 'Zur Dokumentation',
     whatTitle: 'Was ist VDA 231-301?',
+    whatLead: "VDA 231-301 ermöglicht den interoperablen, maschinenlesbaren Austausch von Werkstoffprüf- und Bemusterungsdaten über System-, Unternehmens- und digitale Ökosystemgrenzen hinweg.",
     whatBody: `VDA 231-301 definiert ein einheitliches Datenformat für die Übermittlung von Werkstoffprüf- und
       Bemusterungsergebnissen zwischen OEMs, Lieferanten und Prüflaboren. Auf Basis von JSON Schema ermöglicht
       der Standard einen maschinenlesbaren, validierten Datenaustausch ohne proprietäre Formate oder manuelle

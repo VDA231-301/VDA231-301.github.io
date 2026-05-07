@@ -62,7 +62,7 @@
     challengeRiskItem3: 'Costly corrections and rework',
     challengeFooter: 'The result: fragmented data, limited comparability and increasing regulatory and compliance risk.',
 
-    solutionEyebrow: 'The standardised answer',
+    solutionEyebrow: 'The standardized answer',
     solutionTitle: 'VDA 231-300 and VDA 231-301 - A standardized, machine‑readable foundation for interoperable material data.',
     solutionMatHead: 'Consistent material definition',
     solutionMatItem1: 'Standardized material and surface semantics (VDA 231-300)',
@@ -72,9 +72,6 @@
     solutionResItem1: 'Machine-readable test and measurement results (VDA 231-301)',
     solutionResItem2: 'Standardized structure with formal validation rules',
     solutionResItem3: 'Direct system-to-system exchange without re-typing',
-    solutionResChip1: 'Machine-readable',
-    solutionResChip2: 'Validatable',
-    solutionResChip3: 'Open',
     solutionResChip4: 'System-ready',
     solutionShareHead: 'Shared semantic understanding',
     solutionShareItem1: 'Common interpretation of material and test data',
