@@ -9,17 +9,20 @@ Another important milestone for standardized digital material data exchange has 
 The SEP 1240 subschema has been formally adopted by the responsible VDA project group after intensive coordination and has now been officially released.
 
 ### What is SEP 1240?
+
 SEP 1240 (issued by the **Steel Institute VDEh**) is the established guideline for the experimental determination of mechanical material properties of steel sheets and therefore forms a key basis for CAE simulations.
 
 The objective of the subschema is to harmonize the documentation and, in particular, the exchange of these data between testing institutes, material suppliers, and OEMs.
 
 ### What does this mean in practice?
+
 With the new subschema, for example, tensile test results can now be exchanged in a structured and digital format.
 
 Results that were often previously provided in PDF files or spreadsheets can now be used in a standardized, machine-readable, and automation-ready way.
 
 ### Further information & access
+
 - https://github.com/VDA231-301/schemas
 - https://github.com/VDA231-301
 
-*Originally shared by [Heike Ulmer-Langner] https://www.linkedin.com/posts/heike-ulmer-langner-166774367_offizielle-ver%C3%B6ffentlichung-des-subschemas-share-7455581049973297153-I0tR?utm_source=share&utm_medium=member_ios&rcm=ACoAAFsPVt4BCSAU9kIW-0JKs-zchfuQ6ypbyI0 (Chemische Verfahrenstechnik, Mercedes-Benz AG) on LinkedIn.*
+_Originally shared by [Heike Ulmer-Langner] https://www.linkedin.com/posts/heike-ulmer-langner-166774367_offizielle-ver%C3%B6ffentlichung-des-subschemas-share-7455581049973297153-I0tR?utm_source=share&utm_medium=member_ios&rcm=ACoAAFsPVt4BCSAU9kIW-0JKs-zchfuQ6ypbyI0 (Chemische Verfahrenstechnik, Mercedes-Benz AG) on LinkedIn._

@@ -35,6 +35,7 @@ IDs in VDA 231-301 follow UUID v4 (RFC 4122):
 ```
 
 Rules:
+
 - Every referable object must carry `_id`
 - `_id` must be unique within a transmission file
 - `_id` must not be changed after assignment

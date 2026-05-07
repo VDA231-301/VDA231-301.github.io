@@ -11,7 +11,7 @@ It is developed and maintained within the **VDA Project Group**
 (https://www.vda.de)
 
 The recommendation VDA 231‑301 benefits from scientific collaboration with  
-the **Institute for Engineering Design and Industrial Design (IKTD)**  at the University of Stuttgart
+the **Institute for Engineering Design and Industrial Design (IKTD)** at the University of Stuttgart
 (https://www.iktd.uni-stuttgart.de).
 
 🔗 Related academic publications and research context:

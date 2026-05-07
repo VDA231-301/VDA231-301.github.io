@@ -1,7 +1,7 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const newsCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
@@ -11,7 +11,7 @@ const newsCollection = defineCollection({
 });
 
 const docsCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     order: z.number().optional().default(0),
@@ -20,8 +20,8 @@ const docsCollection = defineCollection({
 });
 
 export const collections = {
-  'news-en': newsCollection,
-  'news-de': newsCollection,
-  'docs-en': docsCollection,
-  'docs-de': docsCollection,
+  "news-en": newsCollection,
+  "news-de": newsCollection,
+  "docs-en": docsCollection,
+  "docs-de": docsCollection,
 };

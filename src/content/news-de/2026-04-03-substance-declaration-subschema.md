@@ -11,4 +11,4 @@ Darüber hinaus wurden am generischen Schema verschiedene Verbesserungen vorgeno
 
 Diese Entwicklungen zeigen, wie aktiv die Community die Digitalisierung und Standardisierung des Datenaustauschs in der automobilen Lieferkette vorantreibt. Wer mit VDA 231-301 arbeitet, sollte sich die aktuellen Diskussionen und Updates ansehen – insbesondere wenn Themen wie Materialdaten, Stoffdeklarationen und digitale Prüfberichte relevant sind.
 
-*Ursprünglich geteilt von [Heike Ulmer-Langner](https://www.linkedin.com/posts/heike-ulmer-langner-166774367_werkstoffliche-bemusterung-activity-7443619000397398016-NUPk) (Chemische Verfahrenstechnik, Mercedes-Benz AG) auf LinkedIn.*
+_Ursprünglich geteilt von [Heike Ulmer-Langner](https://www.linkedin.com/posts/heike-ulmer-langner-166774367_werkstoffliche-bemusterung-activity-7443619000397398016-NUPk) (Chemische Verfahrenstechnik, Mercedes-Benz AG) auf LinkedIn._

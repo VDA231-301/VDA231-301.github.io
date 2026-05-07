@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-vda-green:   #1B6B3A;
-  --color-vda-dark:    #0d3d20;
-  --color-vda-mid:     #155c30;
-  --color-vda-light:   #e8f5ed;
-  --color-vda-pale:    #f5faf7;
-  --color-vda-accent:  #2a8a4e;
-  --font-display:      "Barlow Condensed", "Barlow", sans-serif;
-  --font-body:         "Barlow", sans-serif;
+  --color-vda-green: #1b6b3a;
+  --color-vda-dark: #0d3d20;
+  --color-vda-mid: #155c30;
+  --color-vda-light: #e8f5ed;
+  --color-vda-pale: #f5faf7;
+  --color-vda-accent: #2a8a4e;
+  --font-display: "Barlow Condensed", "Barlow", sans-serif;
+  --font-body: "Barlow", sans-serif;
 }
 
 @layer base {
   :root {
-    --text:        #1a1a1a;
-    --text-muted:  #4b5f53;
-    --border:      #d9e8de;
-    --bg:          #ffffff;
-    --bg-subtle:   #f5faf7;
+    --text: #1a1a1a;
+    --text-muted: #4b5f53;
+    --border: #d9e8de;
+    --bg: #ffffff;
+    --bg-subtle: #f5faf7;
   }
 
   html {
@@ -29,7 +29,12 @@
     text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Barlow", sans-serif;
     font-weight: 600;
     line-height: 1.2;
@@ -37,13 +42,17 @@
   }
 
   a {
-    color: #1B6B3A;
+    color: #1b6b3a;
     text-decoration: none;
   }
-  a:hover { text-decoration: underline; }
+  a:hover {
+    text-decoration: underline;
+  }
 
   /* ── Prose ──────────────────────────────────────────── */
-  .prose { max-width: 70ch; }
+  .prose {
+    max-width: 70ch;
+  }
 
   .prose h2 {
     font-family: "Barlow", sans-serif;
@@ -60,10 +69,26 @@
     margin-bottom: 0.5rem;
     color: #155c30;
   }
-  .prose p  { margin-bottom: 1rem; line-height: 1.75; color: #2a3a30; }
-  .prose ul { margin-bottom: 1rem; padding-left: 1.25rem; list-style-type: disc; }
-  .prose ol { margin-bottom: 1rem; padding-left: 1.25rem; list-style-type: decimal; }
-  .prose li { margin-bottom: 0.25rem; line-height: 1.75; color: #2a3a30; }
+  .prose p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    color: #2a3a30;
+  }
+  .prose ul {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+    list-style-type: disc;
+  }
+  .prose ol {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+    list-style-type: decimal;
+  }
+  .prose li {
+    margin-bottom: 0.25rem;
+    line-height: 1.75;
+    color: #2a3a30;
+  }
 
   .prose code {
     font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
@@ -92,7 +117,7 @@
     font-size: inherit;
   }
   .prose blockquote {
-    border-left: 3px solid #1B6B3A;
+    border-left: 3px solid #1b6b3a;
     padding-left: 1rem;
     color: var(--text-muted);
     margin: 1rem 0;
@@ -103,16 +128,32 @@
     border-top: 1px solid var(--border);
     margin: 2rem 0;
   }
-  .prose table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: 0.9rem; }
-  .prose th, .prose td {
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  .prose th,
+  .prose td {
     border: 1px solid var(--border);
     padding: 0.5rem 0.75rem;
     text-align: left;
   }
-  .prose th { background: var(--bg-subtle); font-weight: 600; color: #155c30; }
-  .prose a { color: #1B6B3A; }
+  .prose th {
+    background: var(--bg-subtle);
+    font-weight: 600;
+    color: #155c30;
+  }
+  .prose a {
+    color: #1b6b3a;
+  }
 
   /* ── Utilities ──────────────────────────────────────── */
-  .font-display { font-family: "Barlow Condensed", "Barlow", sans-serif; }
-  .text-balance  { text-wrap: balance; }
+  .font-display {
+    font-family: "Barlow Condensed", "Barlow", sans-serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
 }

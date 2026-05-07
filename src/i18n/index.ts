@@ -1,5 +1,5 @@
-import { ui as en } from './en';
-import { ui as de } from './de';
+import { ui as en } from "./en";
+import { ui as de } from "./de";
 
 const translations = { en, de } as const;
 
@@ -10,7 +10,7 @@ export function getUi(locale: Locale) {
 }
 
 export function getLangFromUrl(url: URL): Locale {
-  const [, lang] = url.pathname.split('/');
-  if (lang === 'de') return 'de';
-  return 'en';
+  const [, lang] = url.pathname.split("/");
+  if (lang === "de") return "de";
+  return "en";
 }

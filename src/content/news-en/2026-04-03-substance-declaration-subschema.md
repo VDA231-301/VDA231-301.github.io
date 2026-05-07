@@ -11,4 +11,4 @@ In addition, several improvements have been made to the generic schema. These in
 
 These developments demonstrate how actively the community is driving the digitalization and standardization of data exchange across the automotive supply chain. Anyone working with VDA 231-301 should take a look at the latest discussions and updates — especially if topics such as material data, substance declarations, and digital test reports are relevant.
 
-*Originally shared by [Heike Ulmer-Langner](https://www.linkedin.com/posts/heike-ulmer-langner-166774367_werkstoffliche-bemusterung-activity-7443619000397398016-NUPk) (Chemische Verfahrenstechnik, Mercedes-Benz AG) on LinkedIn.*
+_Originally shared by [Heike Ulmer-Langner](https://www.linkedin.com/posts/heike-ulmer-langner-166774367_werkstoffliche-bemusterung-activity-7443619000397398016-NUPk) (Chemische Verfahrenstechnik, Mercedes-Benz AG) on LinkedIn._
