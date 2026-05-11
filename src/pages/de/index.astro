@@ -8,15 +8,16 @@ import SvgLightbox from "@/components/SvgLightbox.astro";
 import { getCollection } from "astro:content";
 import { getUi } from "@/i18n/index";
 
-const t = getUi("en");
+const t = getUi("de");
 const base = import.meta.env.BASE_URL;
+const prefix = `${base}de/`;
 
-const allArticles = await getCollection("news-en", ({ data }) => !data.draft);
+const allArticles = await getCollection("news-de", ({ data }) => !data.draft);
 const sortedArticles = allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 const latestArticles = sortedArticles.slice(0, 3);
 
 function formatDate(date: Date) {
-  return date.toLocaleDateString("en-GB", {
+  return date.toLocaleDateString("de-DE", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -25,37 +26,20 @@ function formatDate(date: Date) {
 ---
 
 <BaseLayout
-  title="VDA 231-301 - An Open JSON Schema for Material Data Exchange"
-  description="VDA 231-301 defines a standardized JSON schema for exchanging material data across industry supply chains."
-  keywords="VDA 231-301, VDA, automotive, material information, JSON schema"
-  canonical="https://vda231-301.github.io/">
-  <script
-    is:inline
-    slot="head"
-    type="application/ld+json"
-    set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareSourceCode",
-      name: "VDA 231-301",
-      description:
-        "An open, standardized JSON schema for exchanging material data across industry supply chains.",
-      url: "https://vda231-301.github.io/",
-      codeRepository: "https://github.com/VDA231-301/VDA231-301",
-    })}
-  />
+  title="VDA 231-301 — Offenes JSON-Schema für den Materialdatenaustausch"
+  description="VDA 231-301 definiert ein standardisiertes JSON-Schema für den Austausch von Materialdaten in industriellen Lieferketten.">
 
   <!-- ── Hero ─────────────────────────────────────────────── -->
   <section class="hero">
     <div class="shell">
       <div class="hero-grid">
-        <!-- Left: copy -->
         <div>
-          <p class="eyebrow">Official VDA Recommendation</p>
+          <p class="eyebrow">Offizielle VDA-Empfehlung</p>
           <h1 set:html={`${t.home.heroTitleBlack} <span class="accent">${t.home.heroTitleGreen}</span>`} />
           <p class="hero-lede">{t.home.heroDescription}</p>
           <div class="hero-cta-row">
-            <a href={`${base}validator/`} class="btn btn-primary">{t.home.ctaValidator}</a>
-            <a href={`${base}docs/`} class="btn btn-ghost">{t.home.ctaDocs}</a>
+            <a href={`${prefix}validator/`} class="btn btn-primary">{t.home.ctaValidator}</a>
+            <a href={`${prefix}docs/`} class="btn btn-ghost">{t.home.ctaDocs}</a>
           </div>
           <div class="hero-stats">
             <div>
@@ -67,16 +51,15 @@ function formatDate(date: Date) {
               <div class="hero-stat-value">6+</div>
             </div>
             <div>
-              <div class="hero-stat-label">License</div>
+              <div class="hero-stat-label">Lizenz</div>
               <div class="hero-stat-value">MIT</div>
             </div>
           </div>
         </div>
-        <!-- Right: visual -->
         <div class="hero-visual">
           <img
             src={`${base}graphic/hero.svg`}
-            alt="VDA 231-301 data model visualization"
+            alt="VDA 231-301 Datenmodell-Visualisierung"
             width="540"
             height="540"
           />
@@ -85,7 +68,7 @@ function formatDate(date: Date) {
     </div>
   </section>
 
-  <!-- ── Today's reality (challenge) ──────────────────────── -->
+  <!-- ── Challenge ──────────────────────────────────────── -->
   <ChallengeSection
     eyebrow={t.home.challengeEyebrow}
     title={t.home.challengeTitle}
@@ -95,11 +78,7 @@ function formatDate(date: Date) {
       {
         num: "01",
         head: t.home.challengeManualHead,
-        body: [
-          t.home.challengeManualItem1,
-          t.home.challengeManualItem2,
-          t.home.challengeManualItem3,
-        ],
+        body: [t.home.challengeManualItem1, t.home.challengeManualItem2, t.home.challengeManualItem3],
         icon: "manual",
       },
       {
@@ -117,7 +96,7 @@ function formatDate(date: Date) {
     ]}
   />
 
-  <!-- ── The standardized answer (solution) ───────────────── -->
+  <!-- ── Solution ───────────────────────────────────────── -->
   <SolutionSection
     eyebrow={t.home.solutionEyebrow}
     title={t.home.solutionTitle}
@@ -125,14 +104,12 @@ function formatDate(date: Date) {
     footerTail={t.home.solutionFooterTail}
     base={base}
     cards={[
-      // Consistent material definition
       {
         num: "01",
         head: t.home.solutionMatHead,
         body: [t.home.solutionMatItem1, t.home.solutionMatItem2, t.home.solutionMatItem3],
         icon: "material",
       },
-      // Interoperable test & measurement data
       {
         num: "02",
         head: t.home.solutionResHead,
@@ -140,7 +117,6 @@ function formatDate(date: Date) {
         icon: "results",
         chips: [t.home.solutionResChip1, t.home.solutionResChip2, t.home.solutionResChip3],
       },
-      // Shared semantic understanding
       {
         num: "03",
         head: t.home.solutionShareHead,
@@ -154,19 +130,17 @@ function formatDate(date: Date) {
   <section class="section">
     <div class="shell">
       <div class="modular">
-        <!-- Left: diagram -->
         <div>
           <img
             src={`${base}vda231-301-modular-concept.svg`}
-            alt="VDA 231-301 schema data model diagram"
+            alt="VDA 231-301 Schema-Datenmodell-Diagramm"
             style="width:100%; height:auto; border-radius:var(--radius-l); border:1px solid var(--line);"
           />
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
-            <SvgLightbox src={`${base}graphic/ai_powered_qa.svg`} alt="AI-powered QA diagram" />
-            <SvgLightbox src={`${base}graphic/use_case_material_sampling.svg`} alt="Material sampling use case" />
+            <SvgLightbox src={`${base}graphic/ai_powered_qa.svg`} alt="KI-gestützte QA-Prozesse" />
+            <SvgLightbox src={`${base}graphic/use_case_material_sampling.svg`} alt="Anwendungsfall: Werkstoffbemusterung" />
           </div>
         </div>
-        <!-- Right: text -->
         <div>
           <p class="eyebrow muted">Modular by design</p>
           <h2 class="display section-title">{t.home.whatTitle}</h2>
@@ -175,22 +149,22 @@ function formatDate(date: Date) {
             <div class="modular-item">
               <div class="marker">01</div>
               <div>
-                <h4>Open by default</h4>
-                <p>JSON Schema, no license fees, no proprietary formats — built for any ecosystem.</p>
+                <h4>Offen per Default</h4>
+                <p>JSON Schema, keine Lizenzgebühren, keine proprietären Formate — für jedes Ökosystem.</p>
               </div>
             </div>
             <div class="modular-item">
               <div class="marker">02</div>
               <div>
-                <h4>Composable</h4>
-                <p>Combine the generic core with domain-specific subschemas to match your exact use case.</p>
+                <h4>Komponierbar</h4>
+                <p>Kombination des generischen Kerns mit domänenspezifischen Subschemata für den jeweiligen Anwendungsfall.</p>
               </div>
             </div>
             <div class="modular-item">
               <div class="marker">03</div>
               <div>
-                <h4>Validation built in</h4>
-                <p>Every payload can be checked against the schema in-browser or in your pipeline.</p>
+                <h4>Validierung inklusive</h4>
+                <p>Jede Nutzlast kann gegen das Schema im Browser oder in der Pipeline geprüft werden.</p>
               </div>
             </div>
           </div>
@@ -199,35 +173,35 @@ function formatDate(date: Date) {
     </div>
   </section>
 
-  <!-- ── Audiences ─────────────────────────────────────── -->
+  <!-- ── Audiences ──────────────────────────────────────── -->
   <AudiencesSection
     eyebrow={t.home.audiencesEyebrow}
     title={t.home.audiencesTitle}
     cards={[
       {
         glyph: "01",
-        role: "Manufacturer",
+        role: "Hersteller",
         title: t.home.audienceMfrTitle,
         lede: t.home.audienceMfrLede,
         gains: [t.home.audienceMfrGain1, t.home.audienceMfrGain2, t.home.audienceMfrGain3],
       },
       {
         glyph: "02",
-        role: "Supplier",
+        role: "Lieferant",
         title: t.home.audienceSupplierTitle,
         lede: t.home.audienceSupplierLede,
         gains: [t.home.audienceSupplierGain1, t.home.audienceSupplierGain2, t.home.audienceSupplierGain3],
       },
       {
         glyph: "03",
-        role: "Test Laboratory",
+        role: "Prüflabor",
         title: t.home.audienceLabTitle,
         lede: t.home.audienceLabLede,
         gains: [t.home.audienceLabGain1, t.home.audienceLabGain2, t.home.audienceLabGain3],
       },
       {
         glyph: "04",
-        role: "Compliance & Quality",
+        role: "Compliance & Qualität",
         title: t.home.audienceComplianceTitle,
         lede: t.home.audienceComplianceLede,
         gains: [t.home.audienceComplianceGain1, t.home.audienceComplianceGain2, t.home.audienceComplianceGain3],
@@ -235,7 +209,7 @@ function formatDate(date: Date) {
     ]}
   />
 
-  <!-- ── Get Started CTA (Steps) ───────────────────────── -->
+  <!-- ── Get Started CTA ────────────────────────────────── -->
   <GetInvolvedCta
     eyebrow={t.home.stepsEyebrow}
     title={t.home.stepsTitle}
@@ -243,19 +217,19 @@ function formatDate(date: Date) {
     base={base}
     steps={[
       { num: "1", head: t.home.step1Head, body: t.home.step1Body, link: t.home.step1Link, href: "https://webshop.vda.de/VDA/en/vda-231-301-022025" },
-      { num: "2", head: t.home.step2Head, body: t.home.step2Body, link: t.home.step2Link, href: `${base}schemas/` },
-      { num: "3", head: t.home.step3Head, body: t.home.step3Body, link: t.home.step3Link, href: `${base}validator/` },
-      { num: "4", head: t.home.step4Head, body: t.home.step4Body, link: t.home.step4Link, href: `${base}docs/` },
+      { num: "2", head: t.home.step2Head, body: t.home.step2Body, link: t.home.step2Link, href: `${prefix}schemas/` },
+      { num: "3", head: t.home.step3Head, body: t.home.step3Body, link: t.home.step3Link, href: `${prefix}validator/` },
+      { num: "4", head: t.home.step4Head, body: t.home.step4Body, link: t.home.step4Link, href: `${prefix}docs/` },
     ]}
     primaryLabel={t.home.ctaValidator}
-    primaryHref={`${base}validator/`}
+    primaryHref={`${prefix}validator/`}
     secondaryLabel={t.home.ctaDocs}
-    secondaryHref={`${base}docs/`}
+    secondaryHref={`${prefix}docs/`}
     tertiaryLabel="GitHub"
     tertiaryHref="https://github.com/VDA231-301"
   />
 
-  <!-- ── Latest News ────────────────────────────────────── -->
+  <!-- ── Latest News ─────────────────────────────────────── -->
   {
     latestArticles.length > 0 && (
       <section class="section tinted">
@@ -265,13 +239,13 @@ function formatDate(date: Date) {
               <p class="eyebrow">{t.home.newsEyebrow}</p>
               <h2 class="display section-title" style="margin-bottom:0">{t.home.newsTitle}</h2>
             </div>
-            <a href={`${base}news/`} class="btn btn-ghost">{t.home.newsViewAll}</a>
+            <a href={`${prefix}news/`} class="btn btn-ghost">{t.home.newsViewAll}</a>
           </div>
           <div class="news-grid">
             {latestArticles.map((article) => (
-              <a href={`${base}news/${article.slug}/`} class="news-card" style="text-decoration:none;">
+              <a href={`${prefix}news/${article.slug}/`} class="news-card" style="text-decoration:none;">
                 <div class="news-meta">
-                  <span class="tag">Release</span>
+                  <span class="tag">{article.data.tag ?? "Release"}</span>
                   <span>{formatDate(article.data.date)}</span>
                 </div>
                 <h3>{article.data.title}</h3>

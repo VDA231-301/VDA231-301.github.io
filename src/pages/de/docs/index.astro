@@ -3,8 +3,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { getUi } from "@/i18n/index";
 
-const t = getUi("en");
-const docs = (await getCollection("docs-en")).sort(
+const t = getUi("de");
+const docs = (await getCollection("docs-de")).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)
 );
 ---
@@ -12,7 +12,7 @@ const docs = (await getCollection("docs-en")).sort(
 <BaseLayout title={t.docs.pageTitle} description={t.docs.pageDescription}>
   <div class="subpage-header">
     <div class="shell">
-      <p class="eyebrow">Reference</p>
+      <p class="eyebrow">Referenz</p>
       <h1 class="display">{t.docs.pageTitle}</h1>
       <p>{t.docs.pageDescription}</p>
     </div>
@@ -22,9 +22,9 @@ const docs = (await getCollection("docs-en")).sort(
     <div class="flex flex-col gap-12 lg:flex-row">
       <!-- Sidebar -->
       <aside class="flex-shrink-0 lg:w-56">
-        <nav aria-label="Documentation sections">
+        <nav aria-label="Dokumentationsabschnitte">
           <p class="mb-3 text-xs font-semibold tracking-widest text-gray-400 uppercase">
-            Documentation
+            Dokumentation
           </p>
           <ul class="space-y-1">
             {

@@ -3,6 +3,7 @@ title: SEP 1240 subschema officially released
 date: 2026-04-29
 summary: The SEP 1240 subschema has been officially released, enabling standardized digital exchange of CAE-relevant test results for steel sheets.
 draft: false
+tag: Release
 ---
 
 Another important milestone for standardized digital material data exchange has been reached.

@@ -8,82 +8,82 @@ interface Props {
 const { lang } = Astro.props;
 const t = getUi(lang);
 const base = import.meta.env.BASE_URL;
+const prefix = lang === "de" ? `${base}de/` : base;
+
+const vdaHref =
+  lang === "de"
+    ? "https://www.vda.de/de/themen/automobilindustrie/werkstoffliche-Bemusterung"
+    : "https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains";
 ---
 
-<footer class="mt-16 border-t border-[#d0e5d8] bg-[#0d3d20] text-white">
-  <div
-    class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8"
-    style="background-image: url(`${base}bg-section.svg`); background-size: 32px 32px;">
-    <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
-      <!-- Brand -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <!-- Col 1: brand -->
       <div>
         <img
           src={`${base}logos/vda-231-301-transparent.png`}
           alt="VDA 231-301"
-          class="mb-3 h-10 w-auto opacity-90 brightness-0 invert"
+          style="height:36px; width:auto; margin-bottom:16px; display:block;"
         />
-        <p class="text-sm leading-relaxed text-[#a8d4b8]">{t.footer.tagline}</p>
+        <p style="max-width:260px; line-height:1.65;">{t.footer.tagline}</p>
       </div>
 
-      <!-- Links -->
+      <!-- Col 2: Standard -->
       <div>
-        <p class="mb-3 text-xs font-semibold tracking-widest text-[#6aad85] uppercase">
-          {t.footer.links}
-        </p>
-        <ul class="space-y-2">
+        <h5>{t.footer.colStandard}</h5>
+        <ul>
+          <li><a href={`${prefix}docs/`}>{t.footer.docs}</a></li>
+          <li><a href={`${prefix}validator/`}>{t.footer.validator}</a></li>
           <li>
-            <a
-              href="https://github.com/VDA231-301"
-              class="inline-flex items-center gap-1.5 text-sm text-[#a8d4b8] no-underline transition-colors hover:text-white"
-              target="_blank"
-              rel="noopener noreferrer">
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true">
-                <path
-                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z">
-                </path>
-              </svg>
+            <a href="https://github.com/VDA231-301" target="_blank" rel="noopener noreferrer">
               {t.footer.github}
             </a>
           </li>
-          <li>
-            <a
-              href={lang === "de"
-                ? "https://www.vda.de/de/themen/automobilindustrie/werkstoffliche-Bemusterung"
-                : "https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains"}
-              class="text-sm text-[#a8d4b8] no-underline transition-colors hover:text-white"
-              target="_blank"
-              rel="noopener noreferrer">
-              {t.footer.vda}
-            </a>
-          </li>
         </ul>
       </div>
 
-      <!-- Legal -->
-      <div class="md:text-right">
-        <p class="mb-3 text-xs leading-relaxed text-[#6aad85]">{t.footer.legal}</p>
-        <ul class="space-y-1.5">
+      <!-- Col 3: Project -->
+      <div>
+        <h5>{t.footer.colProject}</h5>
+        <ul>
+          <li><a href={`${prefix}news/`}>{t.footer.news}</a></li>
+          <li><a href={`${prefix}schemas/`}>{t.footer.schemas}</a></li>
+          <li><a href={vdaHref} target="_blank" rel="noopener noreferrer">{t.footer.vda}</a></li>
+          <li><a href="#">{t.footer.workingGroup}</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Resources -->
+      <div>
+        <h5>{t.footer.colResources}</h5>
+        <ul>
           <li>
-            <a
-              href={`${base}impress/`}
-              class="text-sm text-[#a8d4b8] no-underline transition-colors hover:text-white">
-              {t.footer.imprint}
+            <a href="https://webshop.vda.de/VDA/en/vda-231-301-022025" target="_blank" rel="noopener noreferrer">
+              {t.footer.officialDoc}
             </a>
           </li>
           <li>
-            <a
-              href={`${base}privacy/`}
-              class="text-sm text-[#a8d4b8] no-underline transition-colors hover:text-white">
-              {t.footer.privacy}
+            <a href="https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains" target="_blank" rel="noopener noreferrer">
+              {t.footer.vda300}
+            </a>
+          </li>
+          <li>
+            <a href="https://catena-x.net" target="_blank" rel="noopener noreferrer">
+              {t.footer.catenaX}
             </a>
           </li>
         </ul>
       </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>{t.footer.copyright} · {t.footer.license}</span>
+      <span>
+        <a href={`${prefix}impress/`}>{t.footer.imprint}</a>
+        {" · "}
+        <a href={`${prefix}privacy/`}>{t.footer.privacy}</a>
+      </span>
     </div>
   </div>
 </footer>

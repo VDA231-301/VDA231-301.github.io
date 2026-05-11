@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import RepositoryOverview from "@/components/RepositoryOverview.astro";
+import { getUi } from "@/i18n/index";
+
+const t = getUi("en");
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title={t.schemas.pageTitle}
+  description={t.schemas.pageDescription}
+  canonical="https://vda231-301.github.io/schemas/">
+  <div class="subpage-header">
+    <div class="shell">
+      <p class="eyebrow">{t.schemas.pageEyebrow}</p>
+      <h1 class="display">{t.schemas.pageTitle}</h1>
+      <p class="section-lede">{t.schemas.pageDescription}</p>
+    </div>
+  </div>
+
+  <RepositoryOverview lang="en" base={base} />
+</BaseLayout>

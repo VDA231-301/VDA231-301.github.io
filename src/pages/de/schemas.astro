@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import RepositoryOverview from "@/components/RepositoryOverview.astro";
+import { getUi } from "@/i18n/index";
+
+const t = getUi("de");
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title={t.schemas.pageTitle}
+  description={t.schemas.pageDescription}>
+  <div class="subpage-header">
+    <div class="shell">
+      <p class="eyebrow">{t.schemas.pageEyebrow}</p>
+      <h1 class="display">{t.schemas.pageTitle}</h1>
+      <p>{t.schemas.pageDescription}</p>
+    </div>
+  </div>
+
+  <RepositoryOverview lang="de" base={base} />
+</BaseLayout>

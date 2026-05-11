@@ -3,16 +3,17 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { getUi } from "@/i18n/index";
 
-const t = getUi("en");
+const t = getUi("de");
 const base = import.meta.env.BASE_URL;
+const prefix = `${base}de/`;
 
-const allArticles = await getCollection("news-en", ({ data }) => !data.draft);
+const allArticles = await getCollection("news-de", ({ data }) => !data.draft);
 const articles = allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const [featured, ...rest] = articles;
 
 function formatDate(date: Date) {
-  return date.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" });
+  return date.toLocaleDateString("de-DE", { year: "numeric", month: "long", day: "numeric" });
 }
 
 const tags = [...new Set(articles.map((a) => a.data.tag).filter(Boolean))];
@@ -30,7 +31,7 @@ const tags = [...new Set(articles.map((a) => a.data.tag).filter(Boolean))];
   <section class="section">
     <div class="shell">
       {featured && (
-        <a href={`${base}news/${featured.slug}/`} class="news-feature" style="text-decoration:none; display:grid; margin-bottom:48px;">
+        <a href={`${prefix}news/${featured.slug}/`} class="news-feature" style="text-decoration:none; display:grid; margin-bottom:48px;">
           <div class="news-feature-body">
             <div class="news-meta">
               {featured.data.tag && <span class="tag">{featured.data.tag}</span>}
@@ -50,7 +51,7 @@ const tags = [...new Set(articles.map((a) => a.data.tag).filter(Boolean))];
 
       {tags.length > 0 && (
         <div class="news-filters" id="filters">
-          <button class="news-filter active" data-filter="all">All</button>
+          <button class="news-filter active" data-filter="all">Alle</button>
           {tags.map((tag) => (
             <button class="news-filter" data-filter={tag}>{tag}</button>
           ))}
@@ -63,7 +64,7 @@ const tags = [...new Set(articles.map((a) => a.data.tag).filter(Boolean))];
 
       <div class="news-grid" id="news-list">
         {rest.map((article) => (
-          <a href={`${base}news/${article.slug}/`} class="news-card" data-tag={article.data.tag ?? ""} style="text-decoration:none;">
+          <a href={`${prefix}news/${article.slug}/`} class="news-card" data-tag={article.data.tag ?? ""} style="text-decoration:none;">
             <div class="news-meta">
               {article.data.tag && <span class="tag">{article.data.tag}</span>}
               <span>{formatDate(article.data.date)}</span>

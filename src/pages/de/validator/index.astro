@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import JsonValidator from "@/components/validator/JsonValidator.astro";
 import { getUi } from "@/i18n/index";
 
-const t = getUi("en");
+const t = getUi("de");
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -17,16 +17,15 @@ const base = import.meta.env.BASE_URL;
   </div>
 
   <div class="relative">
-    <!-- Validator content (visible but non-interactive beneath overlay) -->
     <div
       class="pointer-events-none mx-auto max-w-4xl px-4 py-12 select-none sm:px-6 lg:px-8"
       aria-hidden="true">
-      <JsonValidator lang="en" base={base} />
+      <JsonValidator lang="de" base={base} />
 
       <div class="mt-10 border-t border-gray-100 pt-6">
         <p class="text-xs text-gray-400">
-          Validation runs entirely in your browser. No data is transmitted to any server. The
-          Generic Schema uses JSON Schema draft 2020-12.
+          Die Validierung erfolgt vollständig im Browser. Es werden keine Daten an einen Server übertragen.
+          Das Generic Schema verwendet JSON Schema Draft 2020-12.
         </p>
       </div>
     </div>
@@ -36,12 +35,12 @@ const base = import.meta.env.BASE_URL;
       class="absolute inset-0 z-10 flex flex-col items-center justify-start pt-40"
       style="background: rgba(240, 244, 241, 0.50); backdrop-filter: blur(3px);">
       <div class="px-6 text-center">
-        <p class="eyebrow" style="justify-content:center;">Coming Soon</p>
+        <p class="eyebrow" style="justify-content:center;">Demnächst verfügbar</p>
         <h2 class="display" style="font-size:clamp(32px,4vw,52px); margin:14px 0 16px;">
-          Validator under construction
+          Validator in Entwicklung
         </h2>
         <p style="max-width:420px; font-size:16px; color:var(--ink-3); line-height:1.6;">
-          We're still working on this. Check back soon.
+          Wir arbeiten noch daran. Schauen Sie bald wieder vorbei.
         </p>
       </div>
     </div>

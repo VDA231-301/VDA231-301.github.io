@@ -1,0 +1,44 @@
+---
+interface Card {
+  glyph: string;
+  role: string;
+  title: string;
+  lede: string;
+  gains: string[];
+}
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  cards: Card[];
+}
+
+const { eyebrow, title, cards } = Astro.props;
+---
+
+<section class="section tinted">
+  <div class="shell">
+    <div class="section-header">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 class="display section-title">{title}</h2>
+    </div>
+
+    <div class="audiences">
+      {
+        cards.map((card) => (
+          <div class="aud-card">
+            <span class="glyph" aria-hidden="true">{card.glyph}</span>
+            <p class="role">{card.role}</p>
+            <h3>{card.title}</h3>
+            <p class="lede">{card.lede}</p>
+            <div class="gains">
+              {card.gains.map((gain) => (
+                <div class="gain">{gain}</div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
