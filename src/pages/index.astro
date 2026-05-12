@@ -45,11 +45,11 @@ function formatDate(date: Date) {
   />
 
   <!-- ── Hero ─────────────────────────────────────────────── -->
-  <section class="hero">
+  <section class="hero hero--dark-deep">
     <div class="shell">
       <div class="hero-grid">
         <!-- Left: copy -->
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">Official VDA Recommendation</p>
           <h1 set:html={`${t.home.heroTitleBlack} <span class="accent">${t.home.heroTitleGreen}</span>`} />
           <p class="hero-lede">{t.home.heroDescription}</p>
@@ -162,7 +162,7 @@ function formatDate(date: Date) {
             style="width:100%; height:auto; border-radius:var(--radius-l); border:1px solid var(--line);"
           />
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
-            <SvgLightbox src={`${base}graphic/ai_powered_qa.svg`} alt="AI-powered QA diagram" />
+            <SvgLightbox src={`${base}graphic/ai_powered_qa.png`} alt="AI-powered QA diagram" />
             <SvgLightbox src={`${base}graphic/use_case_material_sampling.svg`} alt="Material sampling use case" />
           </div>
         </div>
@@ -285,3 +285,74 @@ function formatDate(date: Date) {
     )
   }
 </BaseLayout>
+
+<script>
+  const VARIANTS = [
+    { id: "hero--dark-deep",   label: "Dark deep",    desc: "#0d3d20 · grid overlay" },
+    { id: "hero--split",       label: "Split",        desc: "dark left / warm right" },
+    { id: "hero--warm-tinted", label: "Warm tinted",  desc: "#fbfaf6 · green wash" },
+    { id: "hero--forest",      label: "Forest",       desc: "#1b6b3a · SVG card" },
+  ];
+
+  const HERO_CLASSES = VARIANTS.map(v => v.id);
+
+  function getActive(): string {
+    const hero = document.querySelector(".hero");
+    return HERO_CLASSES.find(c => hero?.classList.contains(c)) ?? HERO_CLASSES[0];
+  }
+
+  function applyVariant(id: string) {
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
+    hero.classList.remove(...HERO_CLASSES);
+    if (id) hero.classList.add(id);
+    panel.querySelectorAll<HTMLButtonElement>(".hsw-btn").forEach(btn => {
+      btn.style.background = btn.dataset.variant === id ? "rgba(255,255,255,0.18)" : "transparent";
+      btn.style.borderColor = btn.dataset.variant === id ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.12)";
+    });
+  }
+
+  // Build panel
+  const panel = document.createElement("div");
+  panel.id = "hero-switcher";
+  Object.assign(panel.style, {
+    position: "fixed", bottom: "24px", right: "24px", zIndex: "9999",
+    background: "rgba(13,61,32,0.92)", backdropFilter: "blur(12px)",
+    border: "1px solid rgba(255,255,255,0.14)", borderRadius: "12px",
+    padding: "14px 16px", fontFamily: "monospace", fontSize: "11px",
+    color: "rgba(255,255,255,0.55)", display: "none", minWidth: "210px",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+  });
+
+  const heading = document.createElement("div");
+  heading.textContent = "HERO VARIANT  ⌃⇧1";
+  Object.assign(heading.style, { marginBottom: "10px", letterSpacing: "0.1em", fontSize: "10px" });
+  panel.appendChild(heading);
+
+  VARIANTS.forEach(v => {
+    const btn = document.createElement("button");
+    btn.className = "hsw-btn";
+    btn.dataset.variant = v.id;
+    btn.innerHTML = `<span style="color:#fff;font-weight:600;">${v.label}</span>
+      <span style="color:rgba(255,255,255,0.4);margin-left:6px;">${v.desc}</span>`;
+    Object.assign(btn.style, {
+      display: "block", width: "100%", textAlign: "left", cursor: "pointer",
+      background: "transparent", border: "1px solid rgba(255,255,255,0.12)",
+      borderRadius: "6px", padding: "6px 10px", marginTop: "5px",
+      color: "inherit", fontFamily: "monospace", fontSize: "11px",
+      transition: "background 0.15s, border-color 0.15s",
+    });
+    btn.addEventListener("click", () => applyVariant(v.id));
+    panel.appendChild(btn);
+  });
+
+  document.body.appendChild(panel);
+  applyVariant(getActive());
+
+  document.addEventListener("keydown", e => {
+    if (e.ctrlKey && e.shiftKey && e.key === "!") {
+      panel.style.display = panel.style.display === "none" ? "block" : "none";
+      if (panel.style.display === "block") applyVariant(getActive());
+    }
+  });
+</script>
