@@ -145,10 +145,17 @@ function isActive(href: string) {
       display: none !important;
     }
   }
-  /* Hide desktop nav-links individually on mobile — handled by .nav-links visibility via responsive CSS */
   @media (max-width: 960px) {
     .nav-links {
       display: none;
+    }
+    .logo-brand,
+    .logo-sep,
+    .logo-powered {
+      display: none;
+    }
+    .logo {
+      margin-right: auto;
     }
   }
 </style>

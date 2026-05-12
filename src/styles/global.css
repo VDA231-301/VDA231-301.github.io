@@ -1333,6 +1333,9 @@
   .nav-links .nav-link:not(.active):not(:last-child) {
     display: none;
   }
+  .nav-inner {
+    gap: 8px;
+  }
 }
 @media (max-width: 640px) {
   .shell {
