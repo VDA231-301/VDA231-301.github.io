@@ -64,10 +64,13 @@ const githubSvg = `<svg width="13" height="13" viewBox="0 0 24 24" fill="current
 
 <section class="section">
   <div class="shell">
-    <p style="margin-bottom:32px; font-size:15px; color:var(--ink-3); max-width:680px; line-height:1.65;">
-      {lang === "de"
-        ? "VDA 231‑301 ist in modulare Subschema-Repositories gegliedert. Jedes Subschema deckt einen bestimmten funktionalen oder regulatorischen Bereich ab und kann unabhängig oder in Kombination eingesetzt werden."
-        : "VDA 231‑301 is organized into modular subschema repositories. Each subschema covers a dedicated functional or regulatory domain and can be used independently or in combination."}
+    <p
+      style="margin-bottom:32px; font-size:15px; color:var(--ink-3); max-width:680px; line-height:1.65;">
+      {
+        lang === "de"
+          ? "VDA 231‑301 ist in modulare Subschema-Repositories gegliedert. Jedes Subschema deckt einen bestimmten funktionalen oder regulatorischen Bereich ab und kann unabhängig oder in Kombination eingesetzt werden."
+          : "VDA 231‑301 is organized into modular subschema repositories. Each subschema covers a dedicated functional or regulatory domain and can be used independently or in combination."
+      }
     </p>
 
     <div class="repo-table-wrap">
@@ -80,23 +83,32 @@ const githubSvg = `<svg width="13" height="13" viewBox="0 0 24 24" fill="current
           </tr>
         </thead>
         <tbody>
-          {repos.map((repo) => (
-            <tr>
-              <td>
-                <a href={repo.url} target="_blank" rel="noopener noreferrer" set:html={`${githubSvg} ${repo.name}`} />
-              </td>
-              <td>{repo.en}</td>
-              <td>{repo.de}</td>
-            </tr>
-          ))}
+          {
+            repos.map((repo) => (
+              <tr>
+                <td>
+                  <a
+                    href={repo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    set:html={`${githubSvg} ${repo.name}`}
+                  />
+                </td>
+                <td>{repo.en}</td>
+                <td>{repo.de}</td>
+              </tr>
+            ))
+          }
         </tbody>
       </table>
     </div>
 
     <p style="margin-top:20px; font-size:13px; color:var(--ink-3);">
-      {lang === "de"
-        ? "Detaillierte Datenmodelle, Abbildungen und Beispiele sind in den jeweiligen Subschema-Repositories verfügbar."
-        : "Detailed data models, figures and examples are provided within each subschema repository."}
+      {
+        lang === "de"
+          ? "Detaillierte Datenmodelle, Abbildungen und Beispiele sind in den jeweiligen Subschema-Repositories verfügbar."
+          : "Detailed data models, figures and examples are provided within each subschema repository."
+      }
     </p>
   </div>
 </section>

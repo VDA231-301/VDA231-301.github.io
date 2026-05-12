@@ -26,16 +26,18 @@ function formatDate(date: Date) {
 ---
 
 <BaseLayout
-  title="VDA 231-301 — Offenes JSON-Schema für den Materialdatenaustausch"
-  description="VDA 231-301 definiert ein standardisiertes JSON-Schema für den Austausch von Materialdaten in industriellen Lieferketten.">
-
+  title="VDA 231-301 — Interoperabilität von Materialdaten für industrielle Lieferketten"
+  description="Offener semantischer Interoperabilitätsstandard für industrielle Materialintelligenz, der den maschinenlesbaren Austausch von Werkstoffanforderungen, Prüfergebnissen, Zertifikaten und Compliance-Daten in Lieferketten ermöglicht.">
   <!-- ── Hero ─────────────────────────────────────────────── -->
   <section class="hero hero--dark-deep">
     <div class="shell">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Offizielle VDA-Empfehlung</p>
-          <h1 set:html={`${t.home.heroTitleBlack} <span class="accent">${t.home.heroTitleGreen}</span>`} />
+          <p class="eyebrow">Powered by VDA 231-301 &amp; VDA 231-300</p>
+          <h1>
+            <span>{t.home.heroTitleBlack}</span>
+            <span class="accent">{t.home.heroTitleGreen}</span>
+          </h1>
           <p class="hero-lede">{t.home.heroDescription}</p>
           <div class="hero-cta-row">
             <a href={`${prefix}validator/`} class="btn btn-primary">{t.home.ctaValidator}</a>
@@ -48,7 +50,7 @@ function formatDate(date: Date) {
             </div>
             <div>
               <div class="hero-stat-label">Schemas</div>
-              <div class="hero-stat-value">6+</div>
+              <div class="hero-stat-value">8</div>
             </div>
             <div>
               <div class="hero-stat-label">Lizenz</div>
@@ -78,7 +80,11 @@ function formatDate(date: Date) {
       {
         num: "01",
         head: t.home.challengeManualHead,
-        body: [t.home.challengeManualItem1, t.home.challengeManualItem2, t.home.challengeManualItem3],
+        body: [
+          t.home.challengeManualItem1,
+          t.home.challengeManualItem2,
+          t.home.challengeManualItem3,
+        ],
         icon: "manual",
       },
       {
@@ -138,7 +144,10 @@ function formatDate(date: Date) {
           />
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
             <SvgLightbox src={`${base}graphic/ai_powered_qa.svg`} alt="KI-gestützte QA-Prozesse" />
-            <SvgLightbox src={`${base}graphic/use_case_material_sampling.svg`} alt="Anwendungsfall: Werkstoffbemusterung" />
+            <SvgLightbox
+              src={`${base}graphic/use_case_material_sampling.svg`}
+              alt="Anwendungsfall: Werkstoffbemusterung"
+            />
           </div>
         </div>
         <div>
@@ -150,21 +159,30 @@ function formatDate(date: Date) {
               <div class="marker">01</div>
               <div>
                 <h4>Offen per Default</h4>
-                <p>JSON Schema, keine Lizenzgebühren, keine proprietären Formate — für jedes Ökosystem.</p>
+                <p>
+                  JSON Schema, keine Lizenzgebühren, keine proprietären Formate — für jedes
+                  Ökosystem.
+                </p>
               </div>
             </div>
             <div class="modular-item">
               <div class="marker">02</div>
               <div>
                 <h4>Komponierbar</h4>
-                <p>Kombination des generischen Kerns mit domänenspezifischen Subschemata für den jeweiligen Anwendungsfall.</p>
+                <p>
+                  Kombination des generischen Kerns mit domänenspezifischen Subschemata für den
+                  jeweiligen Anwendungsfall.
+                </p>
               </div>
             </div>
             <div class="modular-item">
               <div class="marker">03</div>
               <div>
                 <h4>Validierung inklusive</h4>
-                <p>Jede Nutzlast kann gegen das Schema im Browser oder in der Pipeline geprüft werden.</p>
+                <p>
+                  Jede Nutzlast kann gegen das Schema im Browser oder in der Pipeline geprüft
+                  werden.
+                </p>
               </div>
             </div>
           </div>
@@ -190,7 +208,11 @@ function formatDate(date: Date) {
         role: "Lieferant",
         title: t.home.audienceSupplierTitle,
         lede: t.home.audienceSupplierLede,
-        gains: [t.home.audienceSupplierGain1, t.home.audienceSupplierGain2, t.home.audienceSupplierGain3],
+        gains: [
+          t.home.audienceSupplierGain1,
+          t.home.audienceSupplierGain2,
+          t.home.audienceSupplierGain3,
+        ],
       },
       {
         glyph: "03",
@@ -204,7 +226,11 @@ function formatDate(date: Date) {
         role: "Compliance & Qualität",
         title: t.home.audienceComplianceTitle,
         lede: t.home.audienceComplianceLede,
-        gains: [t.home.audienceComplianceGain1, t.home.audienceComplianceGain2, t.home.audienceComplianceGain3],
+        gains: [
+          t.home.audienceComplianceGain1,
+          t.home.audienceComplianceGain2,
+          t.home.audienceComplianceGain3,
+        ],
       },
     ]}
   />
@@ -216,17 +242,28 @@ function formatDate(date: Date) {
     lede={t.home.stepsLede}
     base={base}
     steps={[
-      { num: "1", head: t.home.step1Head, body: t.home.step1Body, link: t.home.step1Link, href: "https://webshop.vda.de/VDA/en/vda-231-301-022025" },
-      { num: "2", head: t.home.step2Head, body: t.home.step2Body, link: t.home.step2Link, href: `${prefix}schemas/` },
-      { num: "3", head: t.home.step3Head, body: t.home.step3Body, link: t.home.step3Link, href: `${prefix}validator/` },
-      { num: "4", head: t.home.step4Head, body: t.home.step4Body, link: t.home.step4Link, href: `${prefix}docs/` },
+      {
+        num: "1",
+        head: t.home.step2Head,
+        body: t.home.step2Body,
+        link: t.home.step2Link,
+        href: `${prefix}schemas/`,
+      },
+      {
+        num: "2",
+        head: t.home.step3Head,
+        body: t.home.step3Body,
+        link: t.home.step3Link,
+        href: `${prefix}validator/`,
+      },
+      {
+        num: "3",
+        head: t.home.step4Head,
+        body: t.home.step4Body,
+        link: t.home.step4Link,
+        href: `${prefix}docs/`,
+      },
     ]}
-    primaryLabel={t.home.ctaValidator}
-    primaryHref={`${prefix}validator/`}
-    secondaryLabel={t.home.ctaDocs}
-    secondaryHref={`${prefix}docs/`}
-    tertiaryLabel="GitHub"
-    tertiaryHref="https://github.com/VDA231-301"
   />
 
   <!-- ── Latest News ─────────────────────────────────────── -->
@@ -237,13 +274,20 @@ function formatDate(date: Date) {
           <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:48px;">
             <div>
               <p class="eyebrow">{t.home.newsEyebrow}</p>
-              <h2 class="display section-title" style="margin-bottom:0">{t.home.newsTitle}</h2>
+              <h2 class="display section-title" style="margin-bottom:0">
+                {t.home.newsTitle}
+              </h2>
             </div>
-            <a href={`${prefix}news/`} class="btn btn-ghost">{t.home.newsViewAll}</a>
+            <a href={`${prefix}news/`} class="btn btn-ghost">
+              {t.home.newsViewAll}
+            </a>
           </div>
           <div class="news-grid">
             {latestArticles.map((article) => (
-              <a href={`${prefix}news/${article.slug}/`} class="news-card" style="text-decoration:none;">
+              <a
+                href={`${prefix}news/${article.slug}/`}
+                class="news-card"
+                style="text-decoration:none;">
                 <div class="news-meta">
                   <span class="tag">{article.data.tag ?? "Release"}</span>
                   <span>{formatDate(article.data.date)}</span>

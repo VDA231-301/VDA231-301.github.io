@@ -27,7 +27,9 @@ const { eyebrow, title, cards } = Astro.props;
       {
         cards.map((card) => (
           <div class="aud-card">
-            <span class="glyph" aria-hidden="true">{card.glyph}</span>
+            <span class="glyph" aria-hidden="true">
+              {card.glyph}
+            </span>
             <p class="role">{card.role}</p>
             <h3>{card.title}</h3>
             <p class="lede">{card.lede}</p>

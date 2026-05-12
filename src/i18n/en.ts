@@ -34,7 +34,7 @@ export const ui = {
     heroTitle: "VDA 231-301",
     heroSubtitle: "Material Information -  From documents to trusted material data",
     heroDescription:
-      "A standardized, machine-readable data model designed for digital ecosystems. An open JSON schema enabling interoperable exchange of material and test data across industrial supply chains",
+      "Machine-readable digital material thread infrastructure for interoperable material requirements, test results, certificates, and compliance evidence across industrial supply chains.",
     ctaValidator: "Validate your data",
     ctaDocs: "Explore the documentation",
     whatTitle: "What is VDA 231-301?",
@@ -43,7 +43,7 @@ export const ui = {
     whatBody: `VDA 231‑301 is an official VDA recommendation defining a standardized, machine‑readable data model for material and test information.
     It addresses a key challenge in digital supply chains: reliable, interoperable exchange of material‑related data across company and system boundaries.
 
-    Built on open JSON Schema, VDA 231‑301 enables validated system‑to‑system data exchange between manufacturers, suppliers and testing laboratories.
+    The data model is represented as open, versioned JSON Schemas so systems can validate, exchange, and process material information automatically.
     It builds on the standardized material definitions of VDA 231‑300 and extends them with a machine‑readable model for test and measurement results.
 
     Together, VDA 231‑300 and VDA 231‑301 form a consistent foundation for structured material data exchange.
@@ -52,7 +52,7 @@ export const ui = {
     While originating from automotive requirements, the data model is generically applicable to any industry relying on structured exchange of material information.
     The recommendation is developed and maintained by the VDA 231‑301 Project Group through transparent, open collaboration.`,
     factsTitle: "At a glance",
-    factsSchema: "JSON Schema — system‑ready and validatable ",
+    factsSchema: "Open, versioned JSON Schema representations for automated validation",
     factsSubschemas: "Modular subschema architecture for scalable integration",
     factsOpenSource: "Open standard — MIT License, no vendor lock-in",
     factsVDA: "Official VDA recommendation with industry backing",
@@ -107,7 +107,7 @@ export const ui = {
     ctaBody: `VDA 231‑301 provides a standardized, machine‑readable data model for material and test information, enabling interoperable data exchange across organizations and IT systems.
 
     Replace document‑based processes with validated, system‑to‑system data exchange.
-    Integrate the open JSON Schema into your platforms and toolchains to reduce manual effort, improve data quality and ensure reliable compliance and sustainability reporting at scale.
+    Integrate the open semantic data model into your platforms and toolchains to reduce manual effort, improve data quality and ensure reliable compliance and sustainability reporting at scale.
 
     VDA 231‑301 is developed as an open standard.
     Adoption, technical feedback and real‑world use cases directly shape its evolution.
@@ -121,16 +121,17 @@ export const ui = {
         "Adopt a standardized, machine-readable reference for material and test data and improve data quality, comparability and auditability across the supply chain.",
       supplier:
         "Provide material and test data once, reuse it across customers and reduce manual effort, coordination loops and reporting overhead.",
-      tool: "Build interoperable solutions on an open, VDA-backed JSON Schema and avoid proprietary interfaces or one-off integrations.",
+      tool: "Build interoperable solutions on an open, VDA-backed semantic data model with JSON Schema representations and avoid proprietary interfaces or one-off integrations.",
     },
 
-    heroTitleBlack: "From documents to",
-    heroTitleGreen: "trusted material data",
+    heroTitleBlack: "Explore the",
+    heroTitleGreen: "open digital material thread",
 
     audiencesEyebrow: "Who benefits",
     audiencesTitle: "A standard that pays back at every node of the value chain.",
     audienceMfrTitle: "Manufacturer",
-    audienceMfrLede: "Define what material data you need — once, in a form every supplier can deliver.",
+    audienceMfrLede:
+      "Define what material data you need — once, in a form every supplier can deliver.",
     audienceMfrGain1: "Reduced coordination overhead",
     audienceMfrGain2: "Comparable, auditable data",
     audienceMfrGain3: "Faster compliance sign-off",
@@ -140,19 +141,21 @@ export const ui = {
     audienceSupplierGain2: "Less manual re-entry",
     audienceSupplierGain3: "Machine-validated results",
     audienceLabTitle: "Test Laboratory",
-    audienceLabLede: "Deliver structured, validated test results that integrate directly into customer systems.",
+    audienceLabLede:
+      "Deliver structured, validated test results that integrate directly into customer systems.",
     audienceLabGain1: "Structured report output",
     audienceLabGain2: "Direct system integration",
     audienceLabGain3: "Zero transcription errors",
     audienceComplianceTitle: "Compliance & Quality",
-    audienceComplianceLede: "Rely on consistent, formally validated data for audits and sustainability reporting.",
+    audienceComplianceLede:
+      "Rely on consistent, formally validated data for audits and sustainability reporting.",
     audienceComplianceGain1: "Traceable data provenance",
     audienceComplianceGain2: "Audit-ready records",
     audienceComplianceGain3: "Regulatory confidence",
 
     stepsEyebrow: "Get started",
     stepsTitle: "Apply the standard. Connect your systems.",
-    stepsLede: "Four pragmatic steps from recommendation to live, validated data exchange.",
+    stepsLede: "Three pragmatic steps from recommendation to live, validated data exchange.",
     step1Head: "Read the recommendation",
     step1Body: "Download the official VDA 231-301 document and understand the data model.",
     step1Link: "VDA Webshop →",
@@ -163,7 +166,7 @@ export const ui = {
     step3Body: "Use the built-in validator to check your JSON payloads against the schemas.",
     step3Link: "Open validator →",
     step4Head: "Connect your systems",
-    step4Body: "Integrate the open JSON Schema into your platforms and toolchains.",
+    step4Body: "Integrate the open semantic data model into your platforms and toolchains.",
     step4Link: "Documentation →",
 
     newsEyebrow: "Latest",

@@ -11,8 +11,14 @@ const { src, alt, thumbAlt } = Astro.props;
 <a href={src} class="glightbox svg-thumb" data-gallery="diagrams" data-title={alt}>
   <img src={src} alt={thumbAlt ?? alt} loading="lazy" />
   <span class="svg-thumb-overlay" aria-hidden="true">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2">
+      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
     </svg>
   </span>
 </a>

@@ -1,0 +1,19 @@
+{
+  "name": "VDA 231-301 — Material Data Interoperability",
+  "short_name": "VDA 231-301",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1b6b3a",
+  "background_color": "#fbfaf6",
+  "display": "standalone"
+}

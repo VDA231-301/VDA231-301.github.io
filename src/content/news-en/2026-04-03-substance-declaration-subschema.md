@@ -3,7 +3,7 @@ title: New Substance Declaration Subschema Published for Discussion
 date: 2026-04-03
 summary: A new "Substance Declaration" subschema has been added to the VDA 231-301 GitHub repository, alongside several improvements to the generic schema.
 draft: false
-tag: Release
+tag: Draft
 ---
 
 A new "Substance Declaration" subschema has been published for discussion in the [VDA 231-301 GitHub repository](https://github.com/VDA231-301/VDA_231-301__SubstanceDeclaration). This extends the existing structure with an additional building block for the standardized description and exchange of substance-related information.

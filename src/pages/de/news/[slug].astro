@@ -26,11 +26,19 @@ function formatDate(date: Date) {
   <div class="subpage-header">
     <div class="shell">
       <p class="eyebrow">
-        <a href={`${prefix}news/`} style="color:var(--brand); text-decoration:none;">← {t.news.pageTitle}</a>
+        <a href={`${prefix}news/`} style="color:var(--brand); text-decoration:none;">
+          ← {t.news.pageTitle}
+        </a>
       </p>
       <h1 class="display" style="font-size:clamp(32px,4vw,56px);">{article.data.title}</h1>
       <p>
-        {article.data.tag && <span class="tag" style="margin-right:8px;">{article.data.tag}</span>}
+        {
+          article.data.tag && (
+            <span class="tag" style="margin-right:8px;">
+              {article.data.tag}
+            </span>
+          )
+        }
         <time datetime={article.data.date.toISOString()}>{formatDate(article.data.date)}</time>
       </p>
     </div>

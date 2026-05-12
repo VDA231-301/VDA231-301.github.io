@@ -14,6 +14,11 @@ const vdaHref =
   lang === "de"
     ? "https://www.vda.de/de/themen/automobilindustrie/werkstoffliche-Bemusterung"
     : "https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains";
+
+const workingGroupHref =
+  lang === "de"
+    ? "https://www.vda.de/de/der-vda/organisation/fachabteilungen/fahrzeugtechnologien-und-eco-systeme/fachgruppe-technische-vorschriften"
+    : "https://www.vda.de/en/association/organization/departments/automotive-technologies-and-eco-systems/competence-center-technical-regulations-materials";
 ---
 
 <footer class="footer">
@@ -50,7 +55,7 @@ const vdaHref =
           <li><a href={`${prefix}news/`}>{t.footer.news}</a></li>
           <li><a href={`${prefix}schemas/`}>{t.footer.schemas}</a></li>
           <li><a href={vdaHref} target="_blank" rel="noopener noreferrer">{t.footer.vda}</a></li>
-          <li><a href="#">{t.footer.workingGroup}</a></li>
+          <li><a href={workingGroupHref} target="_blank" rel="noopener noreferrer">{t.footer.workingGroup}</a></li>
         </ul>
       </div>
 
@@ -59,12 +64,18 @@ const vdaHref =
         <h5>{t.footer.colResources}</h5>
         <ul>
           <li>
-            <a href="https://webshop.vda.de/VDA/en/vda-231-301-022025" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://webshop.vda.de/VDA/en/vda-231-301-022025"
+              target="_blank"
+              rel="noopener noreferrer">
               {t.footer.officialDoc}
             </a>
           </li>
           <li>
-            <a href="https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.vda.de/en/topics/automotive-industry/The-Future-of-Material-Sampling-in-Automotive-Value-Chains"
+              target="_blank"
+              rel="noopener noreferrer">
               {t.footer.vda300}
             </a>
           </li>

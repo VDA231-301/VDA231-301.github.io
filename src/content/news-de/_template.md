@@ -3,7 +3,7 @@
 # Der Dateiname wird zum URL-Slug.
 title: Artikeltitel
 date: 2026-04-01
-summary: Eine ein- bis zweisilbige Zusammenfassung, die auf der Neuigkeitenliste angezeigt wird.
+summary: Eine ein- bis zweisilbige Zusammenfassung, die auf der News-Liste angezeigt wird.
 draft: false
 ---
 
