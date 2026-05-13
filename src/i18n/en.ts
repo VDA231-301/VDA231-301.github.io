@@ -19,7 +19,7 @@ export const ui = {
     validator: "Validator",
     github: "GitHub",
     news: "News",
-    schemas: "Schemas",
+    catalog: "Schema Catalog",
     vda: "VDA Website",
     workingGroup: "Working Group",
     officialDoc: "Official Document",
@@ -201,12 +201,12 @@ export const ui = {
     empty: "No articles yet. Check back soon.",
     readMore: "Read more",
   },
-  schemas: {
-    pageTitle: "Schemas",
+  catalog: {
+    pageTitle: "Schema Catalog",
     pageEyebrow: "Open Project Resources",
     pageDescription:
       "All schema repositories for the VDA 231-301 standard. Each repository covers a dedicated functional or regulatory domain.",
-    nav: "Schemas",
+    nav: "Schema Catalog",
   },
 } as const;
 
