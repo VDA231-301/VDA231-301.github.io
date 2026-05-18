@@ -6,7 +6,7 @@ draft: true
 tag: event
 ---
 
-**VDA 231-301 wird aktiv in industriellen Anwendungs- und Austauschformaten genutzt.**
+**VDA 231-301 entwickelt sich zu einem zentralen Enabler für den praxisnahen Austausch von Materialdaten in der Industrie.**
 
 Am 17. Juni 2026 veranstaltet die Matplus GmbH in Wuppertal einen Workshop zum Austausch werkstoffbezogener Informationen entlang der Wertschöpfungskette – ohne Medienbrüche.
 
