@@ -10,14 +10,10 @@ tag: event
 
 Am 17. Juni 2026 veranstaltet die Matplus GmbH in Wuppertal einen Workshop zum Austausch werkstoffbezogener Informationen entlang der Wertschöpfungskette – ohne Medienbrüche.
 
-Im Mittelpunkt steht das neue Dienstleistungsangebot MatliX, das gemeinsam mit der Litexa GmbH entwickelt wurde. Ziel ist es, Unternehmen beim effizienten und agilen Austausch von Materialdaten zu unterstützen – auf Basis des offenen Standards **VDA 231-301**.
+Ziel ist es, Unternehmen beim effizienten und agilen Austausch von Materialdaten zu unterstützen – auf Basis des offenen Standards VDA 231-301.
 
-Der Workshop richtet sich an Entscheider, Anwender und IT-Verantwortliche, die Materialinformationen in bestehende Systemlandschaften wie ERP- und PLM-Systeme integrieren und dabei unnötigen Overhead vermeiden möchten.
+Der Workshop richtet sich an Entscheider, Anwender und IT-Verantwortliche, die Materialinformationen in bestehende Systemlandschaften wie ERP- und PLM-Systeme integrieren und dabei unnötigen Overhead vermeiden möchten. Konzepte aus Datenräumen wie DCP, DAPS oder ODRL können bei Bedarf integriert werden. 
 
-MatliX verfolgt dabei einen pragmatischen Ansatz und bleibt gleichzeitig zukunftsfähig:  
-Konzepte aus Datenräumen wie DCP, DAPS oder ODRL können bei Bedarf integriert werden. Zudem orientiert sich MatliX an IDS-RAM und Gaia-X-Prinzipien, um eine Interoperabilität mit europäischen Datenräumen zu gewährleisten.
-
-Der Workshop ist auf 20 Teilnehmer begrenzt und bietet eine praxisnahe Plattform für Austausch und Diskussion rund um die digitale Nutzung werkstoffbezogener Daten.
 
 Weitere Informationen zum Veranstalter:  
 https://www.matplus.eu
