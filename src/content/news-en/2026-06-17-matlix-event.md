@@ -6,7 +6,7 @@ draft: true
 tag: event
 ---
 
-**VDA 231-301 is increasingly used in real-world industry applications and exchange formats.**
+**VDA 231-301 is becoming a key enabler for real-world material data exchange across industry.**
 
 On June 17, 2026, Matplus GmbH will host a workshop in Wuppertal focusing on the exchange of material-related information across value chains – without media discontinuities.
 
