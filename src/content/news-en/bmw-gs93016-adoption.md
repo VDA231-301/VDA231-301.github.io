@@ -1,0 +1,25 @@
+---
+title: Brain of Materials supports BMW GS 93016 within VDA 231-301
+date: 2026-05-18
+summary: Brain of Materials recently announced support for BMW GS 93016 approval processes, explicitly leveraging the VDA 231-301 framework
+draft: true
+tag: adoption
+---
+
+**The adoption of VDA 231-301 continues to grow across the industry.**
+
+
+Brain of Materials recently announced support for BMW GS 93016 approval processes, explicitly leveraging the VDA 231-301 framework for standardized, machine-readable material data exchange.
+
+This demonstrates how VDA 231-301 enables:
+
+- Seamless integration of approval data into standardized formats  
+- Structured data exchange aligned with OEM expectations  
+- Reuse of test data across multiple programs  
+- Long-term interoperability across evolving standards  
+
+This is a strong example of real-world adoption in OEM approval workflows.
+
+[Read the full article](https://www.brainofmaterials.com/news/brain-of-materials-now-officially-supports-bmw-gs-93016-approval)
+
+
