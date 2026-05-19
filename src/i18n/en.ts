@@ -34,7 +34,7 @@ export const ui = {
     heroTitle: "VDA 231-301",
     heroSubtitle: "Material Information -  From documents to trusted material data",
     heroDescription:
-      "Machine-readable digital material thread infrastructure for interoperable material requirements, test results, certificates, and compliance evidence across industrial supply chains.",
+      "An open, machine‑readable foundation for interoperable material information: requirements, test results, certificates, and compliance evidence across industrial supply chains.",
     ctaValidator: "Validate your data",
     ctaDocs: "Explore the documentation",
     whatTitle: "What is VDA 231-301?",
