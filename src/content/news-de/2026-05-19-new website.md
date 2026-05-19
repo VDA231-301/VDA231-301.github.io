@@ -1,9 +1,8 @@
-
 ---
 title: Neuer Look der VDA 231-301 Website
 date: 2026-05-19
 summary: Die VDA 231-301 Website wurde neu gestaltet und ins Deutsche übersetzt
-draft: true
+draft: false
 tag: Release
 ---
 
@@ -18,16 +17,16 @@ Was ist neu?
 - Jetzt auch auf Deutsch verfügbar und dadurch für eine noch breitere Zielgruppe zugänglich  
 - Starker Fokus auf Usability: klarere Struktur, geführte Einstiegspunkte und praxisnahe Orientierung  
 - Von der Theorie zur Praxis:  
-→ Warum VDA 231‑301 relevant ist  
-→ Wer entlang der Wertschöpfungskette profitiert  
-→ Wie der Einstieg gelingt – Schritt für Schritt  
-✅ Weniger akademisch, stärker visuell: Prozesse, Nutzen und Zusammenhänge auf einen Blick  
+  → Warum ist die VDA 231‑301 relevant  
+  → Wer profitiert entlang der Wertschöpfungskette 
+  → Wie gelingt der Einstieg – Schritt für Schritt  
+- Schnell zu erfassen: Prozesse, Nutzen und Zusammenhänge auf einen Blick  
 
 Warum ist das wichtig?
 Der Austausch von Material-, Prüf- und Compliance-Daten erfolgt noch häufig manuell, fragmentiert und fehleranfällig. VDA 231‑300 und VDA 231‑301 zeigen, wie standardisierte, maschinenlesbare Daten einen nahtlosen, interoperablen digitalen Material-Thread über Unternehmen und Systeme hinweg ermöglichen – offen, modular und validierungsfähig.
 
 💡 Mein persönliches Highlight:
-Die neue Homepage macht deutlich, dass VDA 231‑300 und VDA 231‑301 nicht nur ein weiterer Standard sind, sondern ein praktisches Werkzeug für Hersteller, Lieferanten, Prüflabore sowie Qualitäts- und Compliance-Teams.
+Die neue Homepage macht deutlich, dass VDA 231‑300 und VDA 231‑301 nicht nur  weiterere akademische Standards sind, sondern ein praktisches Werkzeug für Hersteller, Lieferanten, Prüflabore sowie Qualitäts- und Compliance-Teams.
 
 👉 Schauen Sie vorbei, geben Sie Feedback und teilen Sie die Inhalte in Ihrem Netzwerk.
 
