@@ -34,7 +34,7 @@ export const ui = {
     heroTitle: "VDA 231-301",
     heroSubtitle: "Werkstoffliche Bemusterung",
     heroDescription:
-      "Maschinenlesbare digitale Materialthread-Infrastruktur für interoperable Werkstoffanforderungen, Prüfergebnisse, Zertifikate und Compliance-Nachweise in industriellen Lieferketten.",
+      "Eine offene, maschinenlesbare Grundlage für interoperable Materialaninformationen: Anforderungen, Prüfergebnisse, Zertifikate und Konformitätsnachweise entlang industrieller Lieferketten.",
     ctaValidator: "Zum Validator",
     ctaDocs: "Zur Dokumentation",
     whatTitle: "Was ist VDA 231-301?",
@@ -113,7 +113,7 @@ export const ui = {
     },
 
     heroTitleBlack: "Entdecken Sie den",
-    heroTitleGreen: "offenen digitalen material thread",
+    heroTitleGreen: "offenen digitalen Materialdatenfluss",
 
     audiencesEyebrow: "Wer profitiert",
     audiencesTitle: "Ein Standard, der sich an jedem Glied der Wertschöpfungskette auszahlt.",
