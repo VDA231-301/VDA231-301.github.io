@@ -1,8 +1,8 @@
 ---
-title: MatliX Workshop on material data exchange based on VDA 231-301
+title: Workshop on material data exchange based on VDA 231-301
 date: 2026-06-17
 summary: Matplus invites to a workshop on seamless material data exchange across value chains based on VDA 231-301
-draft: true
+draft: false
 tag: event
 ---
 
