@@ -1,5 +1,5 @@
 ---
-title: MatliX-Workshop zum Austausch werkstoffbezogener Daten auf Basis von VDA 231-301
+title: Workshop zum Austausch werkstoffbezogener Daten auf Basis von VDA 231-301
 date: 2026-06-17
 summary: Matplus lädt zu einem Workshop zum medienbruchfreien Austausch von Werkstoffdaten entlang der Wertschöpfungskette ein – basierend auf VDA 231-301
 draft: true
