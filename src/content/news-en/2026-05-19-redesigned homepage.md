@@ -2,7 +2,7 @@
 title: New VDA 231-301 Website
 date: 2026-05-19
 summary: New designed and translated website VDA 231-301 for better understandig
-draft: true
+draft: false
 tag: Release
 ---
 
@@ -13,14 +13,15 @@ tag: Release
 We have completely refreshed the VDA 231‑301 homepage – Focussing on Material Data Interoperability with one clear objective:
 Make the standard easier to understand, easier to use, and easier to adopt.
 
-🔹 What’s new?
-✅ Now also available in German, making the content accessible to an even broader audience ✅ Strong focus on usability: clearer structure, guided entry points, and practical orientation ✅ From theory to practice:
-→ Why VDA 231‑301 matters
-→ Who benefits along the value chain
-→ How to get started – step by step
-✅ Less academic, more visual: processes, benefits, and relationships at a glance
+What’s new?
+- Now also available in German, making the content accessible to an even broader audience
+- Strong focus on usability: clearer structure, guided entry points, and practical orientation ✅ From theory to practice:
+  → Why VDA 231‑301 matters
+  → Who benefits along the value chain
+  → How to get started – step by step
+- Less academic, more visual: processes, benefits, and relationships at a glance
 
-🔹 Why this matters
+Why this matters:
 Material, test and compliance data exchange is still often manual, fragmented, and error‑prone. VDA 231‑300 and VDA 231-301 demonstrate how standardized, machine‑readable data can enable a seamless, interoperable digital material thread across companies and systems – open, modular and validation‑ready.
 
 💡 My personal highlight:
