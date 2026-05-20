@@ -34,7 +34,7 @@ export const ui = {
     heroTitle: "VDA 231-301",
     heroSubtitle: "Werkstoffliche Bemusterung",
     heroDescription:
-      "Eine offene, maschinenlesbare Grundlage für interoperable Materialaninformationen: Anforderungen, Prüfergebnisse, Zertifikate und Konformitätsnachweise entlang industrieller Lieferketten.",
+      "Eine offene, maschinenlesbare Grundlage für interoperable Materialinformationen: Anforderungen, Prüfergebnisse, Zertifikate und Konformitätsnachweise entlang industrieller Lieferketten.",
     ctaValidator: "Zum Validator",
     ctaDocs: "Zur Dokumentation",
     whatTitle: "Was ist VDA 231-301?",
