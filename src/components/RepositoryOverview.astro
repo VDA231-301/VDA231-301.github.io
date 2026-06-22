@@ -72,6 +72,69 @@ const githubSvg = `<svg width="13" height="13" viewBox="0 0 24 24" fill="current
           : "VDA 231‑301 is organized into modular subschema repositories. Each subschema covers a dedicated functional or regulatory domain and can be used independently or in combination."
       }
     </p>
+<div style="margin-bottom:40px; max-width:700px;">
+      <h2 style="font-size:20px; margin-bottom:12px;">
+        {lang === "de" ? "Zugriff auf Schemas" : "Accessing Schemas"}
+      </h2>
+
+      <p style="margin-bottom:12px;">
+        {
+          lang === "de"
+            ? "Die Schemas werden als versionierte JSON-Dateien in den jeweiligen Release-Repositories bereitgestellt."
+            : "Schemas are provided as versioned JSON files in the corresponding release repositories."
+        }
+      </p>
+
+      <h3 style="font-size:16px; margin-top:16px;">
+        {lang === "de" ? "Download" : "How to download"}
+      </h3>
+
+      <ul style="padding-left:20px; margin-bottom:12px;">
+        <li>
+          {
+            lang === "de"
+              ? "Repository öffnen (z. B. VDA_231-301__VDA_270)"
+              : "Open the schema repository (e.g. VDA_231-301__VDA_270)"
+          }
+        </li>
+        <li>
+          {lang === "de" ? "Zu Releases navigieren" : "Navigate to Releases"}
+        </li>
+        <li>
+          {
+            lang === "de"
+              ? "JSON-Datei im Abschnitt 'Assets' herunterladen"
+              : "Download the JSON schema file from the Assets section"
+          }
+        </li>
+      </ul>
+
+      <h3 style="font-size:16px;">
+        {lang === "de" ? "Weitere Zugänge" : "Additional access"}
+      </h3>
+
+      <p style="margin-bottom:8px;">
+        <strong>Viewer:</strong>
+        <a 
+          href="https://vda231-301.github.io/schemas/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          https://vda231-301.github.io/schemas/
+        </a>
+      </p>
+
+      <p>
+        <strong>Repository:</strong>
+        <a 
+          href="https://github.com/VDA231-301/schemas" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          https://github.com/VDA231-301/schemas
+        </a>
+      </p>
+    </div>
 
     <div class="repo-table-wrap">
       <table class="repo-table">
