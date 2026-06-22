@@ -201,13 +201,40 @@ export const ui = {
     empty: "No articles yet. Check back soon.",
     readMore: "Read more",
   },
-  catalog: {
-    pageTitle: "Schema Catalog",
-    pageEyebrow: "Open Project Resources",
-    pageDescription:
-      "All schema repositories for the VDA 231-301 standard. Each repository covers a dedicated functional or regulatory domain.",
-    nav: "Schema Catalog",
-  },
+catalog: {
+  pageTitle: "Schema Catalog",
+  pageEyebrow: "Open Project Resources",
+  pageDescription:
+    "All schema repositories for the VDA 231-301 standard. Each repository covers a dedicated functional or regulatory domain.",
+  nav: "Schema Catalog",
+
+  downloadsTitle: "Accessing Schemas",
+  downloadsIntro:
+    "The VDA 231-301 schemas define a structured and machine-readable data model for the digital exchange of material test results. All schemas are provided as JSON Schema files.",
+
+  downloadsHowTitle: "How to download schemas",
+  downloadsHowText:
+    "To download a schema, open the corresponding schema repository and navigate to the 'Releases' section. The official JSON schema file is provided in the Assets section.",
+  downloadsSteps: [
+    "Open the schema repository (e.g. VDA_231-301__VDA_270)",
+    "Navigate to Releases",
+    "Download the JSON schema file from the Assets section"
+  ],
+
+  viewerTitle: "View schema (human-readable)",
+  viewerLink: "https://vda231-301.github.io/schemas/",
+
+  repoTitle: "Schema repository",
+  repoLink: "https://github.com/VDA231-301/schemas",
+
+  bestPracticeTitle: "Best practice",
+  bestPractice: [
+    "Use versioned releases",
+    "Download schema files from the Assets section",
+    "Avoid using files from the main branch",
+    "Regularly check for updates in the release repositories"
+  ]
+},
 } as const;
 
 export type UiKeys = typeof ui;
