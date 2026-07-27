@@ -1,5 +1,5 @@
 ---
-import type { Locale } from "@/i18n/index";
+import { getUi, type Locale } from "@/i18n/index";
 
 interface Props {
   lang: Locale;
@@ -7,55 +7,72 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+const t = getUi(lang);
 
-const repos = [
+interface Repo {
+  code: string | null;
+  label: string | null;
+  url: string;
+  en: string;
+  de: string;
+}
+
+const repos: Repo[] = [
   {
-    name: "VDA 231‑300 – Generic",
+    code: "VDA 231‑300",
+    label: "Generic",
     url: "https://github.com/VDA231-301/VDA231-300",
     en: "Material and surface definition in 3D-models in JT",
     de: "Material- und Oberflächendefinition in 3D-Modellen im JT",
   },
   {
-    name: "VDA 231‑301 – Generic",
+    code: "VDA 231‑301",
+    label: "Generic",
     url: "https://github.com/VDA231-301/VDA231-301",
     en: "Generic core definitions and reusable model elements",
     de: "Generische Basismodelle und wiederverwendbare Strukturen",
   },
   {
-    name: "Substance Declaration",
-    url: "https://github.com/VDA231-301/VDA_231-301__SubstanceDeclaration",
-    en: "Structured substance and material composition data",
-    de: "Strukturierte Stoff‑ und Materialzusammensetzungen",
-  },
-  {
-    name: "VDA 275 – Formaldehyde",
+    code: "VDA 275",
+    label: "Formaldehyde",
     url: "https://github.com/VDA231-301/VDA_231-301__VDA_275",
     en: "Formaldehyde emission test data",
     de: "Formaldehyd‑Emissionsprüfungen",
   },
   {
-    name: "VDA 278 – VOC / Fogging",
+    code: "VDA 278",
+    label: "VOC / Fogging",
     url: "https://github.com/VDA231-301/VDA_231-301__VDA_278",
     en: "VOC and fogging emission test data",
     de: "VOC‑ und Fogging‑Emissionsdaten",
   },
   {
-    name: "VDA 270 – Odor",
+    code: "VDA 270",
+    label: "Odor",
     url: "https://github.com/VDA231-301/VDA_231-301__VDA_270",
     en: "Odor assessment based on panel testing",
     de: "Geruchsprüfungen mit Panelbewertung",
   },
   {
-    name: "SEP 1240",
+    code: "SEP 1240",
+    label: "Tensile testing",
     url: "https://github.com/VDA231-301/VDA_231-301__SEP_1240",
-    en: "Odor‑relevant material requirements",
-    de: "Geruchsrelevante Werkstoffanforderungen",
+    en: "Experimental Determination of Mechanical Properties of Steel Sheets for CAE-Calculations",
+    de: "Experimentelle Ermittlung mechanischer Kennwerte von Feinblechen aus Stahl für die CAE-Berechnung",
   },
   {
-    name: "EN 10204",
+    code: "EN 10204",
+    label: "3.1 Inspection Certificate",
     url: "https://github.com/VDA231-301/VDA_231-301__EN_10204",
     en: "Digital inspection and acceptance certificates",
     de: "Digitale Prüf‑ und Abnahmezeugnisse",
+  },
+  {
+    code: null,
+    label: "Substance Declaration",
+    url: "https://github.com/VDA231-301/VDA_231-301__SubstanceDeclaration",
+    en: "Structured substance and material composition data",
+    de: "Strukturierte Stoff‑ und Materialzusammensetzungen",
   },
 ];
 
@@ -64,94 +81,90 @@ const githubSvg = `<svg width="13" height="13" viewBox="0 0 24 24" fill="current
 
 <section class="section">
   <div class="shell">
-    <p
-      style="margin-bottom:32px; font-size:15px; color:var(--ink-3); max-width:680px; line-height:1.65;">
-      {
-        lang === "de"
-          ? "VDA 231‑301 ist in modulare Subschema-Repositories gegliedert. Jedes Subschema deckt einen bestimmten funktionalen oder regulatorischen Bereich ab und kann unabhängig oder in Kombination eingesetzt werden."
-          : "VDA 231‑301 is organized into modular subschema repositories. Each subschema covers a dedicated functional or regulatory domain and can be used independently or in combination."
-      }
-    </p>
+    <p class="section-lede mb-12">{t.catalog.repoOverviewLede}</p>
 
-      <div style="
-        margin: 56px 0;
-        padding: 28px 32px;
-        max-width:700px;
-        background: #f6f8f6;
-        border: 1px solid #e0e5e0;
-        border-radius: 10px;
-        ">
-
-      <h2 style="font-size:20px; margin-bottom:12px;">
-        {lang === "de" ? "Zugriff auf Schemas" : "Accessing Schemas"}
-      </h2>
-
-      <p style="margin-bottom:12px;">
-        {
-          lang === "de"
-            ? "Die Schemas werden als versionierte JSON-Dateien in den jeweiligen Release-Repositories bereitgestellt."
-            : "Schemas are provided as versioned JSON files in the corresponding release repositories."
-        }
+    <div class="rounded-[var(--radius-l)] border border-[var(--line)] bg-[var(--bg-tint)] p-8 md:p-10">
+      <p class="eyebrow">{t.catalog.downloadsEyebrow}</p>
+      <h2 class="display mt-2 mb-3 text-[26px] md:text-[30px]">{t.catalog.downloadsTitle}</h2>
+      <p class="max-w-2xl text-[15px] leading-relaxed text-[var(--ink-3)]">
+        {t.catalog.downloadsIntro}
       </p>
 
-      <h3 style="font-size:16px; margin-top:16px;">
-        {lang === "de" ? "Download" : "How to download"}
-      </h3>
+      <div class="mt-9">
+        <h3 class="text-[17px] font-semibold text-[var(--ink)]">{t.catalog.downloadsHowTitle}</h3>
 
-      <ul style="padding-left:20px; margin-bottom:12px;">
-        <li>
+        <div class="mt-5 grid gap-10 md:grid-cols-[1.3fr_1fr]">
+          <div>
+            <p
+              class="mb-4 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--ink-4)]">
+              {t.catalog.downloadsViaReleases}
+            </p>
+
+            <div class="grid gap-3">
+              {
+                t.catalog.downloadsSteps.map((step, i) => (
+                  <div class="modular-item">
+                    <div class="marker">{String(i + 1).padStart(2, "0")}</div>
+                    <p class="m-0 text-[14px] text-[var(--ink-2)]">{step}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="md:border-l md:border-[var(--line)] md:pl-10">
+            <p
+              class="mb-4 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--ink-4)]">
+              {t.catalog.downloadsViaRepo}
+            </p>
+
+            <div class="flex flex-col gap-3">
+              <a
+                href={t.catalog.viewerLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-ghost w-full justify-between">
+                {t.catalog.viewerTitle}
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href={t.catalog.repoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-ghost w-full justify-between"
+                set:html={`${t.catalog.repoTitle} ${githubSvg}`}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 border-t border-[var(--line)] pt-8">
+        <h3
+          class="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--ink-4)]">
+          {t.catalog.bestPracticeTitle}
+        </h3>
+        <ul class="mt-4 grid gap-2.5 text-[14px] text-[var(--ink-2)] sm:grid-cols-2">
           {
-            lang === "de"
-              ? "Repository öffnen (z. B. VDA_231-301__VDA_270)"
-              : "Open the schema repository (e.g. VDA_231-301__VDA_270)"
+            t.catalog.bestPractice.map((tip) => (
+              <li class="flex items-start gap-2">
+                <span class="mt-px text-[var(--brand)]" aria-hidden="true">
+                  ✓
+                </span>
+                {tip}
+              </li>
+            ))
           }
-        </li>
-        <li>
-          {lang === "de" ? "Zu Releases navigieren" : "Navigate to Releases"}
-        </li>
-        <li>
-          {
-            lang === "de"
-              ? "JSON-Datei im Abschnitt 'Assets' herunterladen"
-              : "Download the JSON schema file from the Assets section"
-          }
-        </li>
-      </ul>
-
-      <h3 style="font-size:16px;">
-        {lang === "de" ? "Weitere Zugänge" : "Additional access"}
-      </h3>
-
-      <p style="margin-bottom:8px;">
-        <strong>Viewer:</strong>
-        <a 
-          href="https://vda231-301.github.io/schemas/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          https://vda231-301.github.io/schemas/
-        </a>
-      </p>
-
-      <p>
-        <strong>Repository:</strong>
-        <a 
-          href="https://github.com/VDA231-301/schemas" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          https://github.com/VDA231-301/schemas
-        </a>
-      </p>
+        </ul>
+      </div>
     </div>
 
-    <div class="repo-table-wrap">
+    <div class="repo-table-wrap mt-16">
       <table class="repo-table">
         <thead>
           <tr>
-            <th>{lang === "de" ? "Subschema-Repository" : "Subschema Repository"}</th>
-            <th>{lang === "de" ? "Fokus (EN)" : "Focus (EN)"}</th>
-            <th>{lang === "de" ? "Fokus (DE)" : "Focus (DE)"}</th>
+            <th>{t.catalog.repoTableHeaderRepo}</th>
+            <th>{t.catalog.repoTableHeaderFocus}</th>
           </tr>
         </thead>
         <tbody>
@@ -159,15 +172,13 @@ const githubSvg = `<svg width="13" height="13" viewBox="0 0 24 24" fill="current
             repos.map((repo) => (
               <tr>
                 <td>
-                  <a
-                    href={repo.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    set:html={`${githubSvg} ${repo.name}`}
-                  />
+                  <a href={repo.url} target="_blank" rel="noopener noreferrer">
+                    {repo.code && <span class="chip">{repo.code}</span>}
+                    {repo.label && <span>{repo.label}</span>}
+                    <span class="gh-icon" set:html={githubSvg} />
+                  </a>
                 </td>
-                <td>{repo.en}</td>
-                <td>{repo.de}</td>
+                <td>{lang === "de" ? repo.de : repo.en}</td>
               </tr>
             ))
           }
@@ -175,13 +186,7 @@ const githubSvg = `<svg width="13" height="13" viewBox="0 0 24 24" fill="current
       </table>
     </div>
 
-    <p style="margin-top:20px; font-size:13px; color:var(--ink-3);">
-      {
-        lang === "de"
-          ? "Detaillierte Datenmodelle, Abbildungen und Beispiele sind in den jeweiligen Subschema-Repositories verfügbar."
-          : "Detailed data models, figures and examples are provided within each subschema repository."
-      }
-    </p>
+    <p class="mt-5 text-[13px] text-[var(--ink-3)]">{t.catalog.repoTableNote}</p>
   </div>
 </section>
 
@@ -208,14 +213,17 @@ const githubSvg = `<svg width="13" height="13" viewBox="0 0 24 24" fill="current
     border-bottom: 1px solid var(--line);
     white-space: nowrap;
   }
-  .repo-table tbody tr:nth-child(even) {
-    background: var(--bg-soft);
-  }
   .repo-table td {
     padding: 12px 16px;
     border-bottom: 1px solid var(--line);
     vertical-align: top;
     color: var(--ink-3);
+  }
+  .repo-table tbody tr {
+    transition: background-color 0.15s;
+  }
+  .repo-table tbody tr:hover {
+    background: var(--bg-tint);
   }
   .repo-table tbody tr:last-child td {
     border-bottom: none;
@@ -226,12 +234,26 @@ const githubSvg = `<svg width="13" height="13" viewBox="0 0 24 24" fill="current
   .repo-table td a {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-weight: 600;
-    color: var(--brand);
+    color: var(--ink);
     text-decoration: none;
   }
   .repo-table td a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+  }
+  .repo-table td a:hover .chip {
+    background: var(--brand-soft);
+    color: var(--brand-deep);
+  }
+  .repo-table .chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--brand-deep);
+    transition: background-color 0.15s, color 0.15s;
+  }
+  .repo-table .gh-icon {
+    display: inline-flex;
+    color: var(--ink-4);
   }
 </style>

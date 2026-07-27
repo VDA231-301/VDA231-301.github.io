@@ -208,19 +208,23 @@ catalog: {
     "All schema repositories for the VDA 231-301 standard. Each repository covers a dedicated functional or regulatory domain.",
   nav: "Schema Catalog",
 
+  repoOverviewLede:
+    "VDA 231‑301 is organized into modular subschema repositories. Each subschema covers a dedicated functional or regulatory domain and can be used independently or in combination.",
+
+  downloadsEyebrow: "Access",
   downloadsTitle: "Accessing Schemas",
   downloadsIntro:
     "The VDA 231-301 schemas define a structured and machine-readable data model for the digital exchange of material test results. All schemas are provided as JSON Schema files.",
 
   downloadsHowTitle: "How to download schemas",
-  downloadsHowText:
-    "To download a schema, open the corresponding schema repository and navigate to the 'Releases' section. The official JSON schema file is provided in the Assets section.",
+  downloadsViaReleases: "Via releases",
   downloadsSteps: [
     "Open the schema repository (e.g. VDA_231-301__VDA_270)",
     "Navigate to Releases",
     "Download the JSON schema file from the Assets section"
   ],
 
+  downloadsViaRepo: "Via delivery repo",
   viewerTitle: "View schema (human-readable)",
   viewerLink: "https://vda231-301.github.io/schemas/",
 
@@ -233,7 +237,12 @@ catalog: {
     "Download schema files from the Assets section",
     "Avoid using files from the main branch",
     "Regularly check for updates in the release repositories"
-  ]
+  ],
+
+  repoTableHeaderRepo: "Subschema Repository",
+  repoTableHeaderFocus: "Focus",
+  repoTableNote:
+    "Detailed data models, figures and examples are provided within each subschema repository.",
 },
 } as const;
 

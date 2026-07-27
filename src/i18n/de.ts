@@ -201,6 +201,42 @@ export const ui = {
     pageDescription:
       "Alle Schema-Repositories für den VDA 231-301 Standard. Jedes Repository deckt einen bestimmten funktionalen oder regulatorischen Bereich ab.",
     nav: "Schemakatalog",
+
+    repoOverviewLede:
+      "VDA 231‑301 ist in modulare Subschema-Repositories gegliedert. Jedes Subschema deckt einen bestimmten funktionalen oder regulatorischen Bereich ab und kann unabhängig oder in Kombination eingesetzt werden.",
+
+    downloadsEyebrow: "Zugriff",
+    downloadsTitle: "Zugriff auf Schemas",
+    downloadsIntro:
+      "Die VDA 231-301 Schemas definieren ein strukturiertes, maschinenlesbares Datenmodell für den digitalen Austausch von Werkstoffprüfergebnissen. Alle Schemas werden als JSON-Schema-Dateien bereitgestellt.",
+
+    downloadsHowTitle: "Schemas herunterladen",
+    downloadsViaReleases: "Über Releases",
+    downloadsSteps: [
+      "Repository öffnen (z. B. VDA_231-301__VDA_270)",
+      "Zu Releases navigieren",
+      "JSON-Datei im Abschnitt 'Assets' herunterladen"
+    ],
+
+    downloadsViaRepo: "Über das Delivery-Repo",
+    viewerTitle: "Viewer (visuelle Darstellung)",
+    viewerLink: "https://vda231-301.github.io/schemas/",
+
+    repoTitle: "Schema-Repository",
+    repoLink: "https://github.com/VDA231-301/schemas",
+
+    bestPracticeTitle: "Best Practice",
+    bestPractice: [
+      "Versionierte Releases verwenden",
+      "Schema-Dateien aus dem Abschnitt 'Assets' herunterladen",
+      "Keine Dateien aus dem main-Branch verwenden",
+      "Regelmäßig auf Updates in den Release-Repositories prüfen"
+    ],
+
+    repoTableHeaderRepo: "Subschema-Repository",
+    repoTableHeaderFocus: "Fokus",
+    repoTableNote:
+      "Detaillierte Datenmodelle, Abbildungen und Beispiele sind in den jeweiligen Subschema-Repositories verfügbar.",
   },
 } as const;
 
