@@ -1,6 +1,6 @@
 ---
 title: Workshop on material data exchange based on VDA 231-301
-date: 2026-09-16
+date: 2026-11-24
 summary: Matplus invites to a second workshop on seamless material data exchange across value chains based on VDA 231-301
 draft: false
 tag: event
@@ -8,7 +8,7 @@ tag: event
 
 **VDA 231-301 is becoming a key enabler for real-world material data exchange across industry.**
 
-On September 16, 2026, Matplus GmbH will host the second workshop in Wuppertal focusing on the exchange of material-related information across value chains – without media discontinuities.
+On November 24, 2026, Matplus GmbH will host the second workshop in Wuppertal focusing on the exchange of material-related information across value chains – without media discontinuities.
 
 
 The objective is to support companies in exchanging material data efficiently and in an agile manner – based on the open standard VDA 231-301.
