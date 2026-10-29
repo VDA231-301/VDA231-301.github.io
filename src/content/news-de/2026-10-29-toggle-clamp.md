@@ -7,7 +7,7 @@ draft: true
 
 Wie lassen sich CAD-Daten, einzelne Bauteile, reale Prüflinge und die dazugehörigen Prüfergebnisse digital miteinander verknüpfen? Ein neues Toggle-Clamp-Beispiel veranschaulicht diesen Zusammenhang anhand einer kompletten Baugruppe und bildet zugleich die Grundlage für die Verknüpfung mit menschenlesbaren Prüfberichten im PDF/A-Format.
 
-/images/news/toggle-clamp-vda-231-301.png
+![Toggle Clamp als VDA-231-301-Anwendungsbeispiel](/graphic/toggle-clamp-vda-231-301.png)
 
 *Toggle Clamp als Anwendungsbeispiel für die Verknüpfung von Komponenten-, Material- und Prüfinformationen mit VDA 231-301.*
 
