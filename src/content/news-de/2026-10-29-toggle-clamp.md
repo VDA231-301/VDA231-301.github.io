@@ -2,7 +2,7 @@
 title: "Vom Bauteil zum Prüfbericht: VDA 231-301 am Beispiel einer Toggle Clamp"
 date: 2026-10-29
 summary: "Das Toggle-Clamp-Beispiel zeigt, wie VDA 231-301 CAD-Komponenten, physische Prüfobjekte und strukturierte Prüfergebnisse miteinander verbindet. Ergänzende Beispiel-Prüfberichte veranschaulichen künftig die Verbindung mit lesbaren PDF/A-Dokumenten."
-draft: true
+draft: false
 ---
 
 Wie lassen sich CAD-Daten, einzelne Bauteile, reale Prüflinge und die dazugehörigen Prüfergebnisse digital miteinander verknüpfen? Ein neues Toggle-Clamp-Beispiel veranschaulicht diesen Zusammenhang anhand einer kompletten Baugruppe und bildet zugleich die Grundlage für die Verknüpfung mit menschenlesbaren Prüfberichten im PDF/A-Format.
