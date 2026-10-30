@@ -1,8 +1,9 @@
 ---
 title: "Vom Bauteil zum Prüfbericht: VDA 231-301 am Beispiel einer Toggle Clamp"
 date: 2026-10-29
-summary: "Das Toggle-Clamp-Beispiel zeigt, wie VDA 231-301 CAD-Komponenten, physische Prüfobjekte und strukturierte Prüfergebnisse miteinander verbindet. Ergänzende Beispiel-Prüfberichte veranschaulichen die Verbindung mit lesbaren PDF/A-Dokumenten."
+summary: "Das Toggle-Clamp-Beispiel zeigt, wie die VDA 231-301 CAD-Komponenten, physische Prüfobjekte und strukturierte Prüfergebnisse miteinander verbindet. Ergänzende Beispiel-Prüfberichte veranschaulichen die Verbindung mit lesbaren PDF/A-Dokumenten."
 draft: false
+tag: release
 ---
 
 Wie lassen sich CAD-Daten, einzelne Bauteile, reale Prüflinge und die dazugehörigen Prüfergebnisse digital miteinander verknüpfen? Ein neues Beispiel anhand eines realen CAD-Datensatzes veranschaulicht diesen Zusammenhang. Anhand einer kompletten Baugruppe, die gemäß VDA 231-300 mit den MAT- und SUR-Attributen bedatet ist, wird die gesamte Informationskette durchgängig gezeigt. Zugleich wird die Grundlage für die Verknüpfung mit menschenlesbaren Prüfberichten im PDF/A-Format gelegt.
@@ -12,6 +13,10 @@ Wie lassen sich CAD-Daten, einzelne Bauteile, reale Prüflinge und die dazugehö
 *Toggle Clamp als Anwendungsbeispiel für die Verknüpfung von Komponenten-, Material- und Prüfinformationen mit VDA 231-301.*
 
 Das Beispiel bildet eine "Toggle Clamp", einen Kniehebelspanner, mit ihrer Komponentenstruktur ab. Die Baugruppe beinhaltet mehrere Subkomponenten, die ihrerseits wieder Subkomponenten haben. Die Baugruppe enthält auch mehrere Gleichteile, etwa die Bearing Pins, die sich nur in ihrer Einbauposition unterscheiden. Material und Eigenschaften werden deshalb nur einmal an der Komponente beschrieben, und die Vorkommen in den CAD-Daten verweisen auf diese Beschreibung. So muss nichts doppelt gepflegt werden, und jede Position bleibt trotzdem eindeutig zuordenbar. Hinzu kommen verschiedene Werkstoffarten wie Metalle und Polymere. Damit eignet sich die Baugruppe gut, um zu prüfen, ob VDA 231-301 auch komplexe reale Strukturen abbilden kann.
+
+![Toggle Clamp mit Substruktur im CAD-Strukturbaum](../../../public/graphic/toggle-clamp-substructure.png)
+<br>
+*Baugruppenstruktur der Toggle Clamp: Unterbaugruppen, Gleichteile wie die Bearing Pins und Geometrieknoten, die mit den Komponenten in VDA 231-301 verknüpft werden.*
 
 In diesem Beispiel geht es im Kern nicht allein um die Beschreibung eines Materials oder eines Prüfergebnisses, sondern um den strukturierten, interoperablen Austausch von Material- und Prüfinformationen auf Basis der VDA 231-301. Die Modellierung unterscheidet dabei unter anderem zwischen Komponenten und konkreten physischen Instanzen.
 
@@ -51,6 +56,9 @@ Das Beispiel macht damit sichtbar, wie technische Daten aus unterschiedlichen In
 ## Transparenz zum aktuellen Stand
 
 Das Toggle-Clamp-Beispiel dient der Demonstration von Modellierung und Datenaustausch. Baugruppenstruktur und CAD-Daten stammen aus einem realen Datensatz. Die technischen und organisatorischen Angaben sowie die Prüfergebnisse sind dagegen illustrativ und beschreiben kein tatsächlich geprüftes Bauteil.
+
+Das vollständige Beispiel mit allen JSON-Dateien findet sich im [VDA 231-301 Repository](https://github.com/VDA231-301/VDA231-301/tree/main/examples/clamp).
+Feedback und Anmerkungen sind als [Issue](https://github.com/ORGANISATION/REPO/issues) willkommen.
 
 Das PDF/A-Package ist aktuell als **Working Draft** einzuordnen. 
 
