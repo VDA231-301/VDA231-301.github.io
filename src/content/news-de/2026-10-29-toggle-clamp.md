@@ -1,19 +1,19 @@
 ---
 title: "Vom Bauteil zum Prüfbericht: VDA 231-301 am Beispiel einer Toggle Clamp"
 date: 2026-10-29
-summary: "Das Toggle-Clamp-Beispiel zeigt, wie VDA 231-301 CAD-Komponenten, physische Prüfobjekte und strukturierte Prüfergebnisse miteinander verbindet. Ergänzende Beispiel-Prüfberichte veranschaulichen künftig die Verbindung mit lesbaren PDF/A-Dokumenten."
+summary: "Das Toggle-Clamp-Beispiel zeigt, wie VDA 231-301 CAD-Komponenten, physische Prüfobjekte und strukturierte Prüfergebnisse miteinander verbindet. Ergänzende Beispiel-Prüfberichte veranschaulichen die Verbindung mit lesbaren PDF/A-Dokumenten."
 draft: false
 ---
 
-Wie lassen sich CAD-Daten, einzelne Bauteile, reale Prüflinge und die dazugehörigen Prüfergebnisse digital miteinander verknüpfen? Ein neues Toggle-Clamp-Beispiel veranschaulicht diesen Zusammenhang anhand einer kompletten Baugruppe und bildet zugleich die Grundlage für die Verknüpfung mit menschenlesbaren Prüfberichten im PDF/A-Format.
+Wie lassen sich CAD-Daten, einzelne Bauteile, reale Prüflinge und die dazugehörigen Prüfergebnisse digital miteinander verknüpfen? Ein neues Beispiel anhand eines realen CAD-Datensatzes veranschaulicht diesen Zusammenhang. Anhand einer kompletten Baugruppe, die gemäß VDA 231-300 mit den MAT- und SUR-Attributen bedatet ist, wird die gesamte Informationskette durchgängig gezeigt. Zugleich wird die Grundlage für die Verknüpfung mit menschenlesbaren Prüfberichten im PDF/A-Format gelegt.
 
 ![Toggle Clamp – Kniehebelspanner](../../../public/graphic/toggle-clamp-vda-231-301.png)
 
 *Toggle Clamp als Anwendungsbeispiel für die Verknüpfung von Komponenten-, Material- und Prüfinformationen mit VDA 231-301.*
 
-Das Beispiel bildet eine Toggle Clamp, einen Kniehebelspanner, mit ihrer Komponentenstruktur ab. Die Baugruppe reicht vom Mounting Base und den Bearing Pins über Lever Bar und Clamping Arm bis hin zu Hand Grip und Rubber Thrust Pad.
+Das Beispiel bildet eine "Toggle Clamp", einen Kniehebelspanner, mit ihrer Komponentenstruktur ab. Die Baugruppe beinhaltet mehrere Subkomponenten, die ihrerseits wieder Subkomponenten haben. Die Baugruppe enthält auch mehrere Gleichteile, etwa die Bearing Pins, die sich nur in ihrer Einbauposition unterscheiden. Material und Eigenschaften werden deshalb nur einmal an der Komponente beschrieben, und die Vorkommen in den CAD-Daten verweisen auf diese Beschreibung. So muss nichts doppelt gepflegt werden, und jede Position bleibt trotzdem eindeutig zuordenbar. Hinzu kommen verschiedene Werkstoffarten wie Metalle und Polymere. Damit eignet sich die Baugruppe gut, um zu prüfen, ob VDA 231-301 auch komplexe reale Strukturen abbilden kann.
 
-Dabei geht es nicht allein um die Beschreibung eines Materials oder eines Prüfergebnisses. Mit VDA 231-301 können strukturierte Material- und Prüfinformationen interoperabel ausgetauscht werden. Die Modellierung unterscheidet dabei unter anderem zwischen Komponenten und konkreten physischen Instanzen.
+In diesem Beispiel geht es im Kern nicht allein um die Beschreibung eines Materials oder eines Prüfergebnisses, sondern um den strukturierten, interoperablen Austausch von Material- und Prüfinformationen auf Basis der VDA 231-301. Die Modellierung unterscheidet dabei unter anderem zwischen Komponenten und konkreten physischen Instanzen.
 
 > **CAD-Modell → Komponente → physisches Prüfobjekt → Prüfung → strukturiertes Ergebnis → lesbarer Prüfbericht**
 
@@ -21,17 +21,39 @@ Dabei geht es nicht allein um die Beschreibung eines Materials oder eines Prüfe
 
 Das Toggle-Clamp-Beispiel zeigt die Verbindung mehrerer Informationsebenen: Die Baugruppenstruktur wird digital beschrieben und einzelne Komponenten werden mit ihren Vorkommen in den CAD-Daten verknüpft. Daneben können konkrete physische Prüfobjekte und die zugehörigen Prüfungen abgebildet werden.
 
-Im bereitgestellten Toggle-Clamp-Beispiel werden unter anderem Zug- und Härteprüfungen verwendet. Prüfobjekt, Prüfkörper, Testausführung und Ergebnisse lassen sich dadurch innerhalb des strukturierten Datenmodells miteinander in Beziehung setzen.
-
-Diese Vorgehensweise entspricht dem grundlegenden Ziel von VDA 231-301, Material- und Prüfinformationen strukturiert und maschinenlesbar zwischen unterschiedlichen Beteiligten und IT-Systemen austauschbar zu machen.
+Für die metallischen Komponenten dienen Zug- und Härteprüfungen als Beispiele. Es wird gezeigt, wie Prüfobjekt, Prüfkörper, Testausführung und Ergebnisse sich innerhalb des strukturierten Datenmodells miteinander in Beziehung setzen lassen. Somit können Material- und Prüfinformationen strukturiert und maschinenlesbar zwischen unterschiedlichen Beteiligten und IT-Systemen ausgetauscht werden.
 
 ## Weitere Prüfungen machen das Beispiel greifbarer
 
-Die Toggle Clamp soll schrittweise um weitere beispielhafte Prüfinformationen ergänzt werden. Dazu gehören unter anderem Ergebnisse für einzelne Subkomponenten wie Rubber Thrust Pad und Hand Grip, beispielsweise aus Geruchsprüfungen nach VDA 270.
+Die Toggle Clamp wird um weitere beispielhafte Prüfinformationen für Polymere ergänzt. Dazu gehören beispielsweise Ergebnisse für die Subkomponenten Rubber Thrust Pad und Hand Grip. Eine Geruchsprüfung nach VDA 270 zeigt dabei exemplarisch, wie sich auch werkstoffspezifische Prüfungen für Polymere abbilden lassen. Für ein Spannwerkzeug ist diese Prüfung fachlich nicht typisch, sie dient hier nur der Demonstration.
 
-Darüber hinaus sind beispielhafte Prüfberichte beziehungsweise Daten zu 3.1-Zeugnissen und mechanischen Eigenschaften aus dem Zugversuch im Zusammenhang mit SEP 1240 und EN 10204 vorgesehen.
+Außerdem werden Daten aus Abnahmeprüfzeugnissen 3.1 nach EN 10204 sowie Werkstoffkennwerte nach SEP 1240 über die vorhandenen Subschemata abgebildet.
 
-> **Hinweis:** Die zugehörigen Beispiel-Prüfberichte befinden sich derzeit noch in Erstellung. Alle darin verwendeten Namen, Aufträge, Laborinformationen und Ergebnisse sind Beispieldaten und stellen keine zertifizierten Prüfberichte dar.
+
+## Der nächste Schritt: strukturierte Daten und PDF/A zusammenbringen
+
+Ein strukturierter JSON-Datensatz ist für die maschinelle Verarbeitung geeignet. Im betrieblichen Austausch werden Prüfergebnisse jedoch häufig zusätzlich in einer unmittelbar lesbaren Dokumentform benötigt.
+
+Hier setzt das derzeit als **Working Draft** vorliegende VDA-231-301-PDF-Package-Konzept an. Es beschreibt einen PDF/A-basierten Transportcontainer, der einen lesbaren Report mit einem Manifest sowie strukturierten Daten und optionalen weiteren Dateien zusammenführen kann.
+
+Der derzeit dokumentierte Manifest Contract hat den Stand **Draft 0.1.0**. Dabei handelt es sich ausdrücklich noch nicht um eine freigegebene Spezifikation.
+
+Das Manifest stellt die Zuordnung der enthaltenen Dateien her. Nach dem aktuellen Working Draft umfasst ein Package:
+
+- einen menschenlesbaren Report,
+- ein Manifest,
+- genau einen Main-JSON-Payload,
+- optional weitere Subdocuments,
+- optional binäre Attachments.
+
+Das Beispiel macht damit sichtbar, wie technische Daten aus unterschiedlichen Informationswelten miteinander in Beziehung gesetzt werden können, ohne den menschenlesbaren Prüfbericht durch reine Maschinendaten zu ersetzen.
+
+## Transparenz zum aktuellen Stand
+
+Das Toggle-Clamp-Beispiel dient der Demonstration von Modellierung und Datenaustausch. Baugruppenstruktur und CAD-Daten stammen aus einem realen Datensatz. Die technischen und organisatorischen Angaben sowie die Prüfergebnisse sind dagegen illustrativ und beschreiben kein tatsächlich geprüftes Bauteil.
+
+Das PDF/A-Package ist aktuell als **Working Draft** einzuordnen. 
+
 
 ## Der nächste Schritt: strukturierte Daten und PDF/A zusammenbringen
 
@@ -55,5 +77,5 @@ Das Beispiel macht damit sichtbar, wie technische Daten aus unterschiedlichen In
 
 Das Toggle-Clamp-Beispiel dient der Demonstration der Modellierung und des Datenaustauschs. Die in den Beispielen verwendeten technischen und organisatorischen Angaben sowie Prüfergebnisse sind illustrativ.
 
-Auch das PDF/A-Package ist aktuell als **Working Draft** einzuordnen. Package-Konzept und Manifest Contract stehen damit noch nicht für eine freigegebene VDA-231-301-PDF/A-Spezifikation.
+Das PDF/A-Package ist aktuell als **Working Draft** einzuordnen. 
 
